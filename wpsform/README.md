@@ -1,14 +1,19 @@
-# 金山表单
+# wpsform
 
-## 介绍
-本项目前端样式、交互以及提示等内容参考金山表单进行实现。 相较于金山表单，功能做了较多删减，这里是原型图https://modao.cc/app/ZlAsY7aErb1kbbQZFPMz5。
-
-## 运行
-```bash
-# 下载依赖
-$ npm i
-# 构建
-$ npm run build
-# 运行
-$ npm run serve
+## Project setup
 ```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
