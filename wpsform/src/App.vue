@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import "./assets/styles/reset.css";
 import "./assets/styles/index.css";
 
 export default {
