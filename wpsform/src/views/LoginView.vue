@@ -3,16 +3,15 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 export default defineComponent({
-  name: 'LoginView',
+  name: "LoginView",
   components: {},
   props: {},
   setup(props, ctx) {
-    return {}
-  }
-})
+    return {};
+  },
+});
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -2,7 +2,9 @@
   <div class="app-top">
     <div class="app-logo">logo</div>
     <div class="app-user-info">
-      <router-link to="/login" v-if="!loginState" class="app-login-btn">登录</router-link> 
+      <router-link to="/login" v-if="!loginState" class="app-login-btn"
+        >登录</router-link
+      >
       <div class="app-user-icon" v-if="loginState">头像</div>
       <div class="app-user-title" v-if="loginState">用户名</div>
     </div>
@@ -11,18 +13,18 @@
 </template>
 
 <script>
-import { defineComponent,ref } from 'vue'
+import { defineComponent, ref } from "vue";
 export default defineComponent({
-  name: 'AppView',
+  name: "AppView",
   components: {},
   props: {},
   setup(props, ctx) {
-    const loginState = ref(false)
+    const loginState = ref(false);
     return {
-      loginState
-    }
+      loginState,
+    };
   },
-})
+});
 </script>
 
 <style scoped>

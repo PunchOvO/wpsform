@@ -1,7 +1,7 @@
 export default {
-    namespace: true,
-    actions: {},
-    mutations: {},
-    state: {},
-    getters: {},
-}
+  namespace: true,
+  actions: {},
+  mutations: {},
+  state: {},
+  getters: {},
+};
