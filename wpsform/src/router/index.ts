@@ -6,7 +6,8 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "root",
-    redirect: { name: "form-list" },
+    // redirect: { name: "form-list" },
+    component: () => import("../views/WelcomeView.vue"),
   },
   // App，上方有昵称以及标题
   {
@@ -16,14 +17,14 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       // 首页，展示表单列表
       {
-        path: "from-list",
+        path: "form-list",
         name: "form-list",
         component: () => import("../views/FormList.vue"),
       },
       // 新建表单
       {
-        path: "new-from-create",
-        name: "new-from-create",
+        path: "new-form-create",
+        name: "new-form-create",
         component: () => import("../views/NewformCreate.vue"),
       },
       // 填写详情
@@ -89,11 +90,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/FormWrite.vue"),
   },
   // notfound
-  {
-    path: "/:pathMatch(.*)*",
-    name: "NotFound",
-    component: () => import("../views/NotFound.vue"),
-  },
+  // {
+  //   path: "/:pathMatch(.*)*",
+  //   name: "NotFound",
+  //   component: () => import("../views/NotFound.vue"),
+  // },
 ];
 
 const router = createRouter({
