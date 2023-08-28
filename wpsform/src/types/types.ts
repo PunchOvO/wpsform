@@ -7,13 +7,15 @@ export interface IUser {
 }
 
 export interface IForm {
-  formId: string;
-  offset?: number;
-  limit?: number;
-  isStar?: boolean;
-  title: string;
-  subTitle: string;
+  formId?: string; // 表单ID
+  offset?: number; //
+  limit?: number; //
+  isStar?: boolean; // 表单是否标星
+  title: string; // 表单标题
+  subTitle: string; // 表单副标题
+  ctime: number; // 表单创建时间
   problems: {
+    // 表单问题
     title: string;
     type:
       | "input"
@@ -47,10 +49,12 @@ export interface IProblem {
   required: boolean;
   isNew: boolean;
   setting?: {
-    options: {
+    options?: {
       title: string;
       status: 1 | 2;
     }[];
+    dateType?: "YM" | "YMD" | "YMDHM"; //年月|年月日|年月日时分
+    timeType?: "HMS" | "HM"; //时分秒|时分
   };
   [propName: string]: any;
 }
