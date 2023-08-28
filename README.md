@@ -5,11 +5,10 @@
 
 ## 构建运行
 - vue create wpsform
+
 ```bash
 # 下载依赖
 $ npm i
-# 构建
-$ npm run build
-# 运行
+# 运行 (分别在form-server服务端后端开启服务监听3000端口，在wpsform中起项目)
 $ npm run serve
 ```

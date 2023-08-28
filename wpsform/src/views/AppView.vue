@@ -34,7 +34,7 @@
         <!-- 用户信息 -->
         <div class="app-user" v-if="$store.state.loginState">
           <!-- 用户名 -->
-          <span class="app-user-title">邱宇</span>
+          <span class="app-user-title">punch</span>
           <el-dropdown>
             <!-- 用户头像 -->
             <div
