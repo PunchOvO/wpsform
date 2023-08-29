@@ -188,27 +188,22 @@ export default defineComponent({
 .problem-answer {
   width: 100%;
 }
-
 .problem-answer-item {
   display: flex;
   align-items: center;
   margin-top: 5px;
 }
-
 .problem-answer-item input[type="checkbox"] {
   margin-right: 5px;
 }
-
 .el-input:hover {
   border-bottom: 1px solid #e8ebee;
 }
-
 .problem-answer-set {
   display: flex;
   align-items: center;
   margin-bottom: -15px;
 }
-
 .problem-answer-set > button {
   font-size: 13px;
   color: #439ff0;
