@@ -180,41 +180,7 @@ export function cancelStarForm(id: string) {
 }
 
 //填写表单
-export function inputForm(
-  formId: string,
-  problems: {
-    id: string;
-    title: string;
-    type:
-      | "input"
-      | "singleSelect"
-      | "multiSelect"
-      | "pullSelect"
-      | "date"
-      | "time"
-      | "score";
-    required: boolean;
-    setting?: {
-      options: {
-        title: string;
-        status: 1 | 2;
-      }[];
-    };
-    result?: {
-      value:
-        | string
-        | number
-        | {
-            id: string;
-            title: string;
-          }
-        | {
-            id: string;
-            title: string;
-          }[];
-    };
-  }[]
-) {
+export function inputForm(formId: string, problems: IProblem[]) {
   return request.post<BaseRes>("/api/form/input", {
     formId,
     problems,

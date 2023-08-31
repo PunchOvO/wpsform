@@ -1,154 +1,201 @@
 <template>
-  <div class="formlist-content">
-    <span class="statistics-title"
-      >共收集 {{ formList.length }} 份数据 （正在收集）</span
-    >
-    <div class="formindex-choose">
-      <i class="iconfont icon-arrow-left" @click="IndexDown"></i>
-      第 <span class="form-index"> {{ index + 1 }} </span> 份
-      <i class="iconfont icon-angle-right-o-thin" @click="IndexUp"></i>
+  <div class="page">
+    <div class="top">
+      <div class="top-inner">
+        <el-icon class="back-icon" @click="goBack">
+          <ArrowLeftBold />
+        </el-icon>
+        <span class="header-word-wps">WPS</span>
+        <span class="header-word-center">个人中心</span>
+      </div>
     </div>
-    <hr />
-    <div class="form-main">
-      <span class="input-time"
-        >提交时间：{{ TransformData(forms[index]?.ctime) }}</span
-      >
-      <FormInfo v-if="forms[index]?.id" :id="forms[index]?.id"></FormInfo>
+    <div class="main">
+      <div class="main-inner">
+        <div class="basic-info inner-box">
+          <div class="user-avatar" @click="dialogAvatarVisible = true">
+            <el-avatar class="avatar" :size="80" :src="userInfo.avatar" />
+            <div class="avatar-mask">
+              <span>修改头像</span>
+            </div>
+          </div>
+          <el-dialog
+            v-model="dialogAvatarVisible"
+            title="上传新头像"
+            width="500px"
+          >
+            <div class="container">
+              <div class="avatar-box">
+                <el-upload
+                  action="https://jsonplaceholder.typicode.com/posts/"
+                  :auto-upload="false"
+                >
+                  <img v-if="imageUrl" :src="imageUrl" class="new-avatar" />
+                  <el-icon v-else class="avatar-uploader-icon"
+                    ><Plus
+                  /></el-icon>
+                </el-upload>
+              </div>
+            </div>
+          </el-dialog>
+          <div class="nickname">{{ userInfo.nickname }}</div>
+          <div class="id">ID {{ userInfo.account }}</div>
+        </div>
+        <div class="change-nickname inner-box">修改昵称</div>
+        <div class="change-password inner-box">修改密码</div>
+      </div>
     </div>
-    <div>formId：=== {{ forms[index]?.id }}</div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from "vue";
-import { IForm } from "../types/types";
-import FormInfo from "../components/FormInfo.vue";
-import * as api from "../services/api";
-import { toRaw } from "@vue/reactivity";
+import { defineComponent, computed, ref } from "vue";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+import { ElMessage } from "element-plus";
+
 export default defineComponent({
-  name: "StatisticalDetails",
-  components: {
-    FormInfo,
-  },
-  props: {
-    formId: {
-      type: String,
-    },
-  },
-  setup(props, { emit }) {
-    // form的index
-    const index = ref(0);
-    // 中间参数
-    const indexx = ref(0);
-    const formList = ref([] as IForm[]);
-    const getFormList = async () => {
-      const res = await api.getFormList();
-      for (const post of res.data.items) {
-        formList.value.push(post);
-        if (post.id == props.formId) {
-          index.value = indexx.value;
-        }
-        indexx.value++;
-      }
+  name: "UserCenter",
+  components: {},
+  props: {},
+  setup(props, ctx) {
+    const store = useStore();
+    const router = useRouter();
+    const userInfo = computed(() => store.state.user.userInfo);
+    const dialogAvatarVisible = ref(false);
+    const imageUrl = ref("");
+    //返回
+    const goBack = () => {
+      router.go(-1);
+      // console.log(userInfo.value.avatar);
     };
-    const forms = toRaw(formList);
-    // 监听formid，向父组件抛出事件ChangeId，让父组件改变formid，再props传过来
-    watch(
-      () => formList.value[index.value]?.id,
-      (val, Oldval) => {
-        emit("ChangeId", val);
-      }
-    );
-
-    const IndexDown = () => {
-      if (index.value == 0) {
-        index.value = formList.value.length - 1;
-      } else {
-        index.value--;
-      }
-      console.log("!indexdown");
-    };
-    const IndexUp = () => {
-      console.log(index.value);
-      if (index.value == formList.value.length - 1) {
-        index.value = 0;
-      } else {
-        index.value++;
-      }
-      console.log("!!formindex");
-      console.log(index);
-    };
-
-    const TransformData = (time: number) => {
-      var date = new Date(time);
-      var Y = date.getFullYear() + "/";
-      var M =
-        (date.getMonth() + 1 < 10
-          ? "0" + (date.getMonth() + 1)
-          : date.getMonth() + 1) + "/";
-      var D =
-        (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()) + " ";
-      var h =
-        (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) + ":";
-      var m =
-        (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()) +
-        ":";
-      var s =
-        date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-      return Y + M + D + h + m + s;
-    };
+    const changeNickName = () => {};
 
     return {
-      index,
-      forms,
-      formList,
-      TransformData,
-      IndexDown,
-      IndexUp,
-      getFormList,
+      goBack,
+      userInfo,
+      dialogAvatarVisible,
+      imageUrl,
     };
-  },
-  created() {
-    this.getFormList();
-    console.log(this.formId);
   },
 });
 </script>
 
 <style scoped>
-.formlist-content {
-  margin: 100px;
-  overflow: auto;
+.top {
+  background: #fafafa;
+  box-shadow: 0 1px 0 0 #dbdbdb;
 }
-.statistics-title {
-  font-size: 20px;
+.top-inner {
+  display: flex;
+  height: 60px;
+  margin: 0 30px;
+  align-items: center;
+  font-size: 16px;
 }
-.formindex-choose {
-  margin: 20px 0;
+.back-icon {
+  font-size: 21px;
+  margin-top: 1px;
+  color: #a1a1a1;
+  cursor: pointer;
 }
-.icon-arrow-left,
-.icon-angle-right-o-thin,
-.form-index {
-  background-color: rgb(242, 244, 247);
+.back-icon:hover {
+  color: #409eff;
 }
-.icon-arrow-left {
-  margin-right: 10px;
+.header-word-wps {
+  font-weight: 700;
+  margin-left: 4px;
+  margin-right: 4px;
 }
-.icon-angle-right-o-thin {
-  margin-left: 10px;
+.main {
+  background-color: #f5f5f5;
+  padding-top: 15px;
 }
-.form-index {
-  padding: 0 20px;
-  align-items: baseline;
+.main-inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.form-main {
-  margin-top: 20px;
+.inner-box {
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #e7e9eb;
 }
-.input-time {
-  color: gray;
+.basic-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff url(//qn.cache.wpscdn.cn/s1/avatar-bg.7d147f4.png) no-repeat
+    100% 100%;
 }
-
-.btn {
-  margin: 20px;
+.user-avatar {
+  position: relative;
+  cursor: pointer;
+}
+.avatar {
+  margin-top: 35px;
+}
+.avatar-mask {
+  position: absolute;
+  left: 0;
+  top: 35px;
+  /* z-index: 1; */
+  opacity: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #000;
+  transition: all 0.3s;
+}
+.user-avatar:hover .avatar-mask {
+  opacity: 0.6;
+}
+.avatar-mask span {
+  /* z-index: 3; */
+  display: block;
+  margin: 29px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin: 0 auto;
+}
+.avatar-box {
+  width: 150px;
+  height: 150px;
+  border: 1px dashed var(--el-border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--el-transition-duration-fast);
+}
+.avatar-box:hover {
+  border-color: var(--el-color-primary);
+}
+.new-avatar {
+}
+.el-icon.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+}
+.nickname {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #383838;
+}
+.id {
+  margin-top: 5px;
+  margin-bottom: 35px;
+  font-size: 14px;
+  color: #666;
 }
 </style>

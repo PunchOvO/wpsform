@@ -137,6 +137,7 @@ import ScoreQuestion from "./ScoreQuestion.vue";
 import PullSelect from "./PullSelect.vue";
 import TimeQuestion from "./TimeQuestion.vue";
 import { useStore } from "vuex";
+import axios from "axios";
 export default defineComponent({
   name: "MyQuestion",
   components: {
@@ -192,10 +193,19 @@ export default defineComponent({
       Store.commit("form/delQuesFromQuesList", problem.value.id);
     };
     // 添加到常用
-    const addThisProblemToCommonUse = () => {
-      const problem_ = JSON.parse(JSON.stringify(problem));
+    const addThisProblemToCommonUse = async () => {
+      const problem_ = JSON.parse(JSON.stringify(problem.value));
       if (problem.value.title === "") return alert("请填写题目");
-      Store.commit("problem/addToCommonUse", problem_);
+      const res = await axios({
+        method: "POST",
+        url: "/api/problem/star",
+        data: {
+          problem: problem_,
+        },
+      });
+      if (res.data.stat === "ok") {
+        Store.commit("problem/addToCommonUse", problem_);
+      }
     };
 
     return {

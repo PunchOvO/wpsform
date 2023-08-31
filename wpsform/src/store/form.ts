@@ -62,7 +62,7 @@ export default {
   },
   state: {
     // 中间的问题列表
-    questionList: [
+    /* questionList: [
       {
         type: "input",
         title: "",
@@ -112,7 +112,8 @@ export default {
         isNew: true,
         id: "jPPf3sMyKi52mKMnODbPF",
       },
-    ] as IProblem[],
+    ] as IProblem[], */
+    questionList: [] as IProblem[],
     // 俩标题的草稿
     formTitleDraft: "",
     formSubTitleDraft: "",

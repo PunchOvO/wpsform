@@ -92,7 +92,10 @@ export default defineComponent({
   name: "ProblemItem",
   props: {
     index: Number,
-    problem: Object as PropType<IProblem>,
+    problem: {
+      type: Object as PropType<IProblem>,
+      required: true,
+    },
   },
   emits: ["setProblemResult"],
   setup(props, ctx) {
@@ -152,7 +155,11 @@ export default defineComponent({
     // 单选题处理
     watch(singleSelectValue, (newVal) => {
       //根据id修改结果的title
-      props.problem!.setting!.options.forEach((option) => {
+      (
+        props.problem.setting as {
+          options: { title: string; status: 1 | 2; id: string }[];
+        }
+      ).options.forEach((option) => {
         if (option.id == newVal.value.id) {
           newVal.value.title = option.title;
         }
@@ -163,7 +170,11 @@ export default defineComponent({
     // 下拉选择题处理
     watch(pullSelectValue, (newVal) => {
       //根据title修改结果的id
-      props.problem!.setting!.options.forEach((option) => {
+      (
+        props.problem.setting as {
+          options: { title: string; status: 1 | 2; id: string }[];
+        }
+      ).options.forEach((option) => {
         if (option.title == newVal.value.title) {
           newVal.value.id = String(option.id);
         }
@@ -174,7 +185,11 @@ export default defineComponent({
     //多选题处理
     watch(multiSelectArr, (newVal) => {
       for (let i = 0; i < newVal.length; i++) {
-        props.problem!.setting!.options.forEach((option) => {
+        (
+          props.problem.setting as {
+            options: { title: string; status: 1 | 2; id: string }[];
+          }
+        ).options.forEach((option) => {
           if (option.title == newVal[i]) {
             multiSelectValue.value[i] = {
               title: newVal[i],
