@@ -600,152 +600,11 @@
       ]
     },
     {
-      "id": "1f545679-654a-4fb8-acef-6579bbe9c065",
-      "ctime": 1693541550300,
-      "utime": 1693541550300,
+      "id": "7b1edf98-f04e-4938-88e7-1efdcf8ba9be",
+      "ctime": 1693643952075,
+      "utime": 1693643952075,
       "status": 2,
-      "author": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "isStar": false,
-      "title": "国考练手之省考大战！",
-      "subTitle": "想都不想",
-      "problems": [
-        {
-          "type": "input",
-          "title": "单位小宝不去谁去",
-          "required": false,
-          "isNew": true,
-          "id": "d7e938f4-2426-4c9a-9417-455962c4b338"
-        },
-        {
-          "type": "singleSelect",
-          "title": "一定没问题吧",
-          "required": false,
-          "isNew": true,
-          "id": "ce801dc1-0f27-4c3d-8bd7-4b00ff1510f1",
-          "setting": {
-            "options": [
-              {
-                "title": "该做的都做了不用看天意",
-                "status": 1,
-                "id": "7714759d-1331-4876-83ec-4b6bdba6c05e"
-              },
-              {
-                "title": "能拿得分都拿了得进了吧",
-                "status": 1,
-                "id": "74ddec9d-10aa-4ea7-b28d-b4dbb40d63e7"
-              }
-            ]
-          }
-        },
-        {
-          "type": "score",
-          "title": "小宝进局子上班啦",
-          "required": true,
-          "isNew": false,
-          "id": "82ab6fc2-5f6e-4256-95f9-fe919341ef3b"
-        }
-      ]
-    },
-    {
-      "id": "ad01c4b6-cf79-40f4-9ad6-02f0ae8c953d",
-      "ctime": 1693541550569,
-      "utime": 1693541550569,
-      "status": 1,
-      "author": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "isStar": false,
-      "title": "国考练手之省考大战！",
-      "subTitle": "想都不想",
-      "problems": [
-        {
-          "type": "input",
-          "title": "单位小宝不去谁去",
-          "required": false,
-          "isNew": true,
-          "id": "9d79e274-bfcc-4abf-801d-dde37ad8832c"
-        },
-        {
-          "type": "singleSelect",
-          "title": "一定没问题吧",
-          "required": false,
-          "isNew": true,
-          "id": "7b6bad59-7a92-4b7b-ba0b-6e1fa3e23eb4",
-          "setting": {
-            "options": [
-              {
-                "title": "该做的都做了不用看天意",
-                "status": 1,
-                "id": "f8997355-65da-49a3-8331-5edfe7ddbd8f"
-              },
-              {
-                "title": "能拿得分都拿了得进了吧",
-                "status": 1,
-                "id": "5eaf5759-6456-49af-8a48-2fe9e9f00c64"
-              }
-            ]
-          }
-        },
-        {
-          "type": "score",
-          "title": "小宝进局子上班啦",
-          "required": true,
-          "isNew": false,
-          "id": "9c73b12d-e642-4fb9-a563-31e99f50dc5f"
-        }
-      ]
-    },
-    {
-      "id": "20ca6d22-8bcd-4172-b1d9-8eb453ff0bb9",
-      "ctime": 1693541550618,
-      "utime": 1693541550618,
-      "status": 1,
-      "author": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "isStar": false,
-      "title": "国考练手之省考大战！",
-      "subTitle": "想都不想",
-      "problems": [
-        {
-          "type": "input",
-          "title": "单位小宝不去谁去",
-          "required": false,
-          "isNew": true,
-          "id": "98eac31c-8be6-46ff-9f78-45660af7aaf2"
-        },
-        {
-          "type": "singleSelect",
-          "title": "一定没问题吧",
-          "required": false,
-          "isNew": true,
-          "id": "0d951b28-9af8-489c-9b58-a7fa8d7bc5bd",
-          "setting": {
-            "options": [
-              {
-                "title": "该做的都做了不用看天意",
-                "status": 1,
-                "id": "49e701c2-e62e-4689-a96b-8a7c44a6c9c1"
-              },
-              {
-                "title": "能拿得分都拿了得进了吧",
-                "status": 1,
-                "id": "b20f111e-37f8-47fe-827e-008922208db8"
-              }
-            ]
-          }
-        },
-        {
-          "type": "score",
-          "title": "小宝进局子上班啦",
-          "required": true,
-          "isNew": false,
-          "id": "1d1f9347-a8f3-4c60-a324-ef672af42bf7"
-        }
-      ]
-    },
-    {
-      "id": "fbadb016-1887-4e2c-8f13-fc982d14a59c",
-      "ctime": 1693541567947,
-      "utime": 1693541567947,
-      "status": 2,
-      "author": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
+      "author": "7c265a60-eb4f-418f-bf02-dd799f754381",
       "isStar": false,
       "title": "表单4",
       "subTitle": "表单3副标题",
@@ -755,28 +614,28 @@
           "type": "input",
           "required": true,
           "isNew": true,
-          "id": "9e0260f8-18df-4eac-9546-43e15ea823df"
+          "id": "5f301807-6e50-458d-9b0d-ba8e199ce0eb"
         },
         {
           "title": "问题2",
           "type": "score",
           "required": true,
           "isNew": true,
-          "id": "0d0a82d3-d727-432f-b6b5-39941c4393f5"
+          "id": "5a817515-6005-4c0f-bbd8-dda0be0042b2"
         },
         {
           "title": "问题3",
           "type": "date",
           "required": true,
           "isNew": true,
-          "id": "940449b6-2eea-435f-9c51-20520a573447"
+          "id": "0fa02113-f7a9-40e6-9de8-c48d9fb025d9"
         },
         {
           "title": "问题4",
           "type": "time",
           "required": true,
           "isNew": true,
-          "id": "433d2a43-e012-4bbd-85e3-56ad9a5da1f6"
+          "id": "b8f223c0-a4c6-452a-a191-53b5dd4f65e9"
         },
         {
           "title": "问题5",
@@ -788,16 +647,16 @@
               {
                 "title": "选项A",
                 "status": 1,
-                "id": "468f1e71-979d-4576-9903-0ee88f201c26"
+                "id": "1ebb6c72-abe0-43c7-b6dd-98962e33556d"
               },
               {
                 "title": "选项B",
                 "status": 1,
-                "id": "ae5a0502-b254-4e75-9eb4-74e264d87a41"
+                "id": "70bc3646-decd-426d-8f6a-bcf3495c1b54"
               }
             ]
           },
-          "id": "460acd3c-4cf6-4508-a182-60ac767b1337"
+          "id": "8ce8b8b7-f8a5-4e89-8096-8cf19156c1ef"
         },
         {
           "title": "问题6",
@@ -809,16 +668,16 @@
               {
                 "title": "选项A",
                 "status": 1,
-                "id": "b52c7f54-cdd4-45c7-a720-bf22e94b9139"
+                "id": "86c12eed-c72d-4639-936a-ca9e75fee33d"
               },
               {
                 "title": "选项B",
                 "status": 1,
-                "id": "672cfda8-9f6b-4314-a1d3-5f8c8bfabe63"
+                "id": "0918580d-87f5-4033-ba25-77fbcd4a834e"
               }
             ]
           },
-          "id": "2a3cba83-d308-4192-acfd-9e7ff2e02bf2"
+          "id": "3db42052-56eb-4867-a163-c6a93b513ba1"
         },
         {
           "title": "问题7",
@@ -830,73 +689,26 @@
               {
                 "title": "选项A",
                 "status": 1,
-                "id": "51fee073-b20e-4235-90b2-dfbd453c1b92"
+                "id": "b9c8c803-3190-4f24-847d-0e4773e3de68"
               },
               {
                 "title": "选项B",
                 "status": 1,
-                "id": "500efa36-7e28-47be-8679-2f1e8e491934"
+                "id": "d916e862-5570-405f-bcf5-0dc39d8b31a1"
               },
               {
                 "title": "选项C",
                 "status": 1,
-                "id": "1a4bed9a-9fa7-4bc2-bdff-958a68562fb7"
+                "id": "8f32ca3d-8c38-414a-a70e-18dd33b4553b"
               },
               {
                 "title": "选项D",
                 "status": 1,
-                "id": "6c5ad1f6-b980-46ad-a351-b817802913a3"
+                "id": "81ac61bb-ab03-49ae-b97e-bf28a791d56b"
               }
             ]
           },
-          "id": "f59d3788-9566-4373-92d3-2ef9241ee1f7"
-        }
-      ]
-    },
-    {
-      "id": "6d7b2428-5118-4bb5-b813-8964dfaeaf69",
-      "ctime": 1693541605292,
-      "utime": 1693541605292,
-      "status": 3,
-      "author": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "isStar": false,
-      "title": "国考练手之省考大战！",
-      "subTitle": "想都不用想",
-      "problems": [
-        {
-          "type": "input",
-          "title": "单位小宝不去谁去",
-          "required": false,
-          "isNew": true,
-          "id": "68ff5397-0af1-4528-b1af-2e2fcac9e697"
-        },
-        {
-          "type": "singleSelect",
-          "title": "一定没问题吧",
-          "required": false,
-          "isNew": true,
-          "id": "be488c58-045c-4bca-b3ec-9b95b15b1475",
-          "setting": {
-            "options": [
-              {
-                "title": "该做的都做了不用看天意",
-                "status": 1,
-                "id": "a6617b1b-8286-4dd3-9019-92212fae750c"
-              },
-              {
-                "title": "能拿得分都拿了得进了吧",
-                "status": 1,
-                "id": "7bc843bf-0a9e-4cd9-8fb6-02dc84bd7277"
-              }
-            ]
-          }
-        },
-        {
-          "type": "score",
-          "title": "小宝进局子上班啦",
-          "required": true,
-          "isNew": false,
-          "id": "daf74a34-f920-4940-a6d1-03066714f867"
+          "id": "1f26d5eb-a249-43e0-a867-5da76674d7bb"
         }
       ]
     }
@@ -943,257 +755,27 @@
       "avatar": ""
     },
     {
-      "id": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
+      "id": "7c265a60-eb4f-418f-bf02-dd799f754381",
       "account": "PunchOvO",
       "pwd": "2aee61a0b10093676b2986d94ee401259560335860458af926e8b127176b8817",
       "status": 2,
-      "ctime": 1693541107326,
-      "utime": 1693541107326,
+      "ctime": 1693643862726,
+      "utime": 1693643862726,
       "nickname": "PunchOvO",
-      "avatar": "blob:http://localhost:8080/6d32c3ab-5537-4e9e-b62e-a99080966da3"
+      "avatar": ""
+    },
+    {
+      "id": "2ea3071d-6d0f-43ef-aca8-d70cfc9a6555",
+      "account": "punch1",
+      "pwd": "2aee61a0b10093676b2986d94ee401259560335860458af926e8b127176b8817",
+      "status": 2,
+      "ctime": 1693643907199,
+      "utime": 1693643907199,
+      "nickname": "punch1",
+      "avatar": ""
     }
   ],
-  "starProblems": [
-    {
-      "id": "9d48f3de-9caa-42e4-b675-bfa185a30ad2",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "ZfLKykiQOWuXk9Kt2PhAx",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "8823daf2-d1e4-4b83-b257-1b004deab44d",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "-vuXcwAbNdYxzLh9dT1ud",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "8d2b8983-2421-4b21-8902-ffcc115d7bc2",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "-vuXcwAbNdYxzLh9dT1ud",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "af86a57d-38aa-41e1-a0f6-d3b4292c4000",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "xe7FviWFwBTHap0-sIl8Y",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "06904a53-c710-4187-9281-9f1d46d33e5b",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "xe7FviWFwBTHap0-sIl8Y",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "fd798a51-d35e-4a71-a140-de9e23a345b7",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "gnB-ClgJeNo0PiXPrqfqH",
-        "type": "singleSelect",
-        "title": "性别",
-        "required": true,
-        "setting": {
-          "options": [
-            {
-              "title": "男",
-              "status": 1
-            },
-            {
-              "title": "女",
-              "status": 1
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "1114f5a7-27d6-4f0f-9808-f89895e0501c",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "MiTCkFNGhKqkZuE93Cyo0",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "efb99935-a77d-4c87-a891-7218828d08b5",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "rtt9Kxl3wDVxzkIbwDyvJ",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "850cc7d2-8a69-4edc-8e20-d619ec1852d4",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "rtt9Kxl3wDVxzkIbwDyvJ",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "ba22fc75-9371-4c9e-bbaf-de80c166d44a",
-      "uId": "d00bbb92-2cac-4192-866c-8cc4d8fb39c9",
-      "status": 2,
-      "problem": {
-        "id": "rtt9Kxl3wDVxzkIbwDyvJ",
-        "type": "input",
-        "title": "姓名",
-        "required": true,
-        "setting": null
-      }
-    },
-    {
-      "id": "2fb3ef40-3413-4aac-b947-8ea76faf894e",
-      "uId": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "status": 2,
-      "problem": {
-        "type": "score",
-        "title": "小宝进局子啦",
-        "required": true,
-        "isNew": false,
-        "id": "7EfjMQcViqwoGE5u4mYD7"
-      }
-    },
-    {
-      "id": "fdfb0d1e-2fe9-4a16-93cd-74a12dac5615",
-      "uId": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "status": 2,
-      "problem": {
-        "type": "score",
-        "title": "小宝进局子上班啦",
-        "required": true,
-        "isNew": false,
-        "id": "7EfjMQcViqwoGE5u4mYD7"
-      }
-    },
-    {
-      "id": "cd4a9cf1-0712-4463-88ee-56b6fe63216d",
-      "uId": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "status": 2,
-      "problem": {
-        "type": "score",
-        "title": "小宝进局子上班啦",
-        "required": true,
-        "isNew": false,
-        "id": "7EfjMQcViqwoGE5u4mYD7"
-      }
-    },
-    {
-      "id": "4063b4be-a846-42f1-a76e-aa5b4221ff8b",
-      "uId": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "status": 2,
-      "problem": {
-        "type": "singleSelect",
-        "title": "一定没问题吧",
-        "required": false,
-        "isNew": true,
-        "id": "znc80SB8VVI8NlspF2YXP",
-        "setting": {
-          "options": [
-            {
-              "title": "该做的都做了不用看天意",
-              "status": 1
-            },
-            {
-              "title": "能拿得分都拿了得进了吧",
-              "status": 1
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "4275b7ff-a95b-4406-b876-e18866a1c983",
-      "uId": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "status": 2,
-      "problem": {
-        "type": "score",
-        "title": "小宝进局子啦",
-        "required": true,
-        "isNew": false,
-        "id": "T_kxBS6iAgHaWpQg3HTkY"
-      }
-    },
-    {
-      "id": "45c7dad0-d521-4b6a-803d-cd9036a87e8d",
-      "uId": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "status": 2,
-      "problem": {
-        "type": "score",
-        "title": "小宝进局子啦",
-        "required": true,
-        "isNew": false,
-        "id": "T_kxBS6iAgHaWpQg3HTkY"
-      }
-    },
-    {
-      "id": "a85971ea-4cc6-45fb-b0df-5f190b68180d",
-      "uId": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "status": 2,
-      "problem": {
-        "type": "score",
-        "title": "小宝进局子啦",
-        "required": true,
-        "isNew": false,
-        "id": "T_kxBS6iAgHaWpQg3HTkY"
-      }
-    },
-    {
-      "id": "c2101d8e-0a77-4c18-817c-2474089d1ca4",
-      "uId": "af9b0aea-6351-4e02-95c1-8d99c6ba5d63",
-      "status": 2,
-      "problem": {
-        "type": "score",
-        "title": "小宝进局子上班啦",
-        "required": true,
-        "isNew": false,
-        "id": "7EfjMQcViqwoGE5u4mYD7"
-      }
-    }
-  ],
+  "starProblems": [],
   "formModules": [],
   "formResults": []
 }

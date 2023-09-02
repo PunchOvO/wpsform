@@ -6,13 +6,16 @@
       @tab-change="handleChange"
     >
       <el-tab-pane label="数据详情&统计" name="statistical-details">
-        <StatisticalDetails :formId="formId"></StatisticalDetails>
+        <StatisticalDetails
+          :formId="formId"
+          @ChangeId="ChangeId"
+        ></StatisticalDetails>
       </el-tab-pane>
       <el-tab-pane label="表单问题" name="form-question">
-        <FormQuestion :formId="formId" @ChangeId="ChangeId"></FormQuestion>
+        <FormQuestion :formId="formId"></FormQuestion>
       </el-tab-pane>
       <el-tab-pane label="分享" name="share">
-        <FormShare :formId="formId"></FormShare>
+        <FormShare></FormShare>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -39,14 +42,11 @@ export default defineComponent({
     const route = useRoute();
     const router = useRouter();
     const activeName = ref("");
-    const formId = ref(route.params.id);
+    const formId = ref(route.params.id as string);
 
     const handleChange = (tabPaneName: string) => {
       router.push({
         name: tabPaneName,
-        params: {
-          id: formId.value,
-        },
       });
     };
 
@@ -54,6 +54,7 @@ export default defineComponent({
       formId.value = val;
       console.log("@@@父组件ChangeId执行");
       console.log(formId.value);
+      ctx.emit("GiveId", formId.value);
     };
 
     onBeforeMount(() => {
@@ -75,7 +76,7 @@ export default defineComponent({
 .newform-result-container {
   /* height: 100%; */
   margin-top: 56px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .newform-result-tabs {
   height: 100%;
@@ -99,5 +100,10 @@ export default defineComponent({
 .newform-result-tabs .el-tabs__nav {
   height: 56px;
   padding-left: 30px;
+}
+
+/* 分享页面 */
+#pane-share {
+  height: calc(100vh - 180px);
 }
 </style>
