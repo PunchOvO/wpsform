@@ -40,7 +40,13 @@
               class="app-user-icon el-dropdown-link"
               v-if="$store.state.user.loginState"
             >
-              <img :src="userInfo.avatar" alt="" />
+              <!-- <img :src="userInfo.avatar" alt="" /> -->
+              <el-avatar
+                class="avatar"
+                :size="32"
+                :src="userInfo.avatar"
+                fit="cover"
+              />
             </div>
             <!-- 头像悬浮显示下拉框内容 -->
             <template #dropdown>
@@ -88,8 +94,8 @@ export default defineComponent({
       const res = await api.logout();
       if (res.stat == "ok") {
         store.commit("user/setLoginState", false);
-        window.sessionStorage.removeItem("login");
-        window.sessionStorage.removeItem("user");
+        window.localStorage.removeItem("login");
+        window.localStorage.removeItem("user");
         router.push("/login");
       }
       // console.log(store.state.loginState)
@@ -98,7 +104,15 @@ export default defineComponent({
       formTitle.value = value;
     };
 
+    const getUserInfo = async () => {
+      const res = await api.getUserInfo();
+      if (res.stat == "ok") {
+        store.commit("user/setUserInfo", res.data.user);
+      }
+    };
+
     onBeforeMount(() => {
+      getUserInfo();
       // console.log(typeof store.state.userInfo)
     });
 
