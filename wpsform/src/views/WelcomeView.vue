@@ -57,6 +57,7 @@ export default defineComponent({
 .home-page {
   min-width: 1200px;
 }
+
 .top-header-wrapper {
   width: 100%;
   height: 56px;
@@ -70,10 +71,12 @@ export default defineComponent({
   z-index: 888;
   box-shadow: 0 0 10px 0 rgb(58 58 58 / 7%);
 }
+
 .top-header,
 .main-body {
   width: 1160px;
 }
+
 .top-header {
   height: 56px;
   position: relative;
@@ -81,22 +84,26 @@ export default defineComponent({
   justify-content: space-between;
   align-content: center;
 }
+
 .logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo img {
   width: 30px;
   height: 30px;
   margin-right: 10px;
 }
+
 .logo-name {
   font-size: 18px;
   font-weight: 500;
   color: #3c414b;
   line-height: 25px;
 }
+
 .center-nav {
   height: 56px;
   line-height: 56px;
@@ -106,17 +113,20 @@ export default defineComponent({
   transform: translateX(-50%);
   display: flex;
 }
+
 .center-nav-item {
   margin: 0 20px;
   font-size: 16px;
   font-weight: 500;
   color: #3c414b;
 }
+
 .use-it {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .use-it a {
   color: #1488ed;
   border: 1px solid #1488ed;
@@ -130,9 +140,11 @@ export default defineComponent({
   height: 32px;
   text-align: center;
 }
+
 .use-it a:hover {
   background-color: #f6fbff;
 }
+
 .main-body-wrapper {
   margin-top: 56px;
   width: 100%;
@@ -150,12 +162,14 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
 }
+
 .banner-index-title {
   font-size: 32px;
   font-weight: 500;
   color: #3e3e3e;
   line-height: 42px;
 }
+
 .banner-index-desc {
   width: 43%;
   font-size: 16px;

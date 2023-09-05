@@ -266,16 +266,20 @@ export default defineComponent({
 .problem-item {
   margin-bottom: 30px;
 }
+
 .problem-title {
   margin-bottom: 10px;
 }
+
 .problem-title span {
   font-weight: 600;
   font-size: 14px;
 }
+
 .problem-title-index {
   margin-right: 10px;
 }
+
 .problem-input {
   border: none;
   outline: none;
@@ -284,14 +288,17 @@ export default defineComponent({
   /* margin-bottom: 40px; */
   font-size: 14px;
 }
+
 .problem-input:hover {
   border-bottom: 1px solid #1488ed;
 }
+
 .singleSelectProblem,
 .multiSelectProblem {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .date-problem {
   width: 100%;
   border: none;

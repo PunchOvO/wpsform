@@ -711,6 +711,218 @@
           "id": "1f26d5eb-a249-43e0-a867-5da76674d7bb"
         }
       ]
+    },
+    {
+      "id": "5ecedb65-a804-4c97-8e00-34fbc661e89a",
+      "ctime": 1693887415475,
+      "utime": 1693887415475,
+      "status": 4,
+      "author": "7c265a60-eb4f-418f-bf02-dd799f754381",
+      "isStar": false,
+      "title": "秋招详情",
+      "subTitle": "不要灰心没有金九银十还有金三银四",
+      "problems": [
+        {
+          "id": "2f9facae-5896-4b7c-a2e7-0bf1f68e30be",
+          "type": "input",
+          "title": "姓名",
+          "required": true,
+          "setting": null,
+          "isNew": true
+        },
+        {
+          "id": "e30c042f-ef3b-42fd-ad1a-bd598a3099e3",
+          "type": "singleSelect",
+          "title": "性别",
+          "required": true,
+          "setting": {
+            "options": [
+              {
+                "title": "男",
+                "status": 1,
+                "id": "4068794b-1bd3-402f-b72d-21e1d7cf818b"
+              },
+              {
+                "title": "女",
+                "status": 1,
+                "id": "93309a56-acbe-4e4d-8983-186e47493f25"
+              }
+            ]
+          },
+          "isNew": true
+        },
+        {
+          "type": "input",
+          "title": "你们都在干嘛",
+          "required": false,
+          "isNew": true,
+          "id": "436bc996-64b6-465c-81e9-5acb1cf2c41c"
+        },
+        {
+          "type": "date",
+          "title": "毕业时间",
+          "required": false,
+          "isNew": false,
+          "id": "565f6c0b-00ee-4f50-8b36-7269c49c7e58",
+          "setting": {
+            "options": [
+              {
+                "title": "YM",
+                "status": 1
+              },
+              {
+                "title": "YMD",
+                "status": 1
+              },
+              {
+                "title": "YMDHM",
+                "status": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "multiSelect",
+          "title": "大环境还是逸夫楼",
+          "required": false,
+          "isNew": false,
+          "id": "d7f62dcc-5b80-429d-93d5-bfe129aad11a",
+          "setting": {
+            "options": [
+              {
+                "title": "天台见",
+                "status": 1,
+                "id": "dfecf205-4bb4-429e-84c8-3a051ba4b908"
+              },
+              {
+                "title": "小厂沉淀",
+                "status": 1,
+                "id": "b90b1b2d-89b4-4718-8e97-2eb8bb1e7070"
+              }
+            ]
+          }
+        },
+        {
+          "type": "score",
+          "title": "咋办",
+          "required": false,
+          "isNew": false,
+          "id": "57f9dab4-d3f8-474a-85db-cad9d50e7cd6"
+        }
+      ]
+    },
+    {
+      "id": "8eef0dd0-0e8d-480e-800d-0ca571d2ae13",
+      "ctime": 1693887572668,
+      "utime": 1693887572668,
+      "status": 1,
+      "author": "7c265a60-eb4f-418f-bf02-dd799f754381",
+      "isStar": false,
+      "title": "表单4",
+      "subTitle": "表单3副标题",
+      "problems": [
+        {
+          "title": "问题1",
+          "type": "input",
+          "required": true,
+          "isNew": true,
+          "id": "227e0839-698b-40cd-ad29-90572697bde1"
+        },
+        {
+          "title": "问题2",
+          "type": "score",
+          "required": true,
+          "isNew": true,
+          "id": "a0be12a3-1448-4aab-9724-0b7b7bf9dc5a"
+        },
+        {
+          "title": "问题3",
+          "type": "date",
+          "required": true,
+          "isNew": true,
+          "id": "52ff78bd-5740-45e7-b3c8-98afc4089622"
+        },
+        {
+          "title": "问题4",
+          "type": "time",
+          "required": true,
+          "isNew": true,
+          "id": "5c994e31-7fee-4ba0-ba7f-fad418230c57"
+        },
+        {
+          "title": "问题5",
+          "type": "singleSelect",
+          "required": true,
+          "isNew": true,
+          "setting": {
+            "options": [
+              {
+                "title": "选项A",
+                "status": 1,
+                "id": "18de2dea-b395-42f1-a7f2-3fb67ad9794d"
+              },
+              {
+                "title": "选项B",
+                "status": 1,
+                "id": "6e9e4912-a184-4069-ba62-96d98b1e0bfb"
+              }
+            ]
+          },
+          "id": "2500cbdb-cdf4-4586-a272-7d4f13448d72"
+        },
+        {
+          "title": "问题6",
+          "type": "pullSelect",
+          "required": true,
+          "isNew": true,
+          "setting": {
+            "options": [
+              {
+                "title": "选项A",
+                "status": 1,
+                "id": "07df5c7f-3679-41da-844d-2fc8c52158f1"
+              },
+              {
+                "title": "选项B",
+                "status": 1,
+                "id": "0ce8ee14-7244-44e7-b76c-cccaf3d938f7"
+              }
+            ]
+          },
+          "id": "ef9a7624-d2e2-4e9d-b81e-989a122953fe"
+        },
+        {
+          "title": "问题7",
+          "type": "multiSelect",
+          "required": true,
+          "isNew": true,
+          "setting": {
+            "options": [
+              {
+                "title": "选项A",
+                "status": 1,
+                "id": "c1e0a18d-a37c-4a1d-aa57-18ec35156f95"
+              },
+              {
+                "title": "选项B",
+                "status": 1,
+                "id": "13a98929-b936-41c7-be1a-4fc71a6af116"
+              },
+              {
+                "title": "选项C",
+                "status": 1,
+                "id": "68d73439-7cbc-41a0-8272-0afacb5ce955"
+              },
+              {
+                "title": "选项D",
+                "status": 1,
+                "id": "bd254236-ebfd-4f05-aace-9366fe4ffd9c"
+              }
+            ]
+          },
+          "id": "0e8c9794-7f4b-4322-9001-de11c6477acf"
+        }
+      ]
     }
   ],
   "users": [
@@ -762,7 +974,7 @@
       "ctime": 1693643862726,
       "utime": 1693643862726,
       "nickname": "PunchOvO",
-      "avatar": ""
+      "avatar": "blob:http://localhost:8080/5a7ddd38-ea6e-4886-9e44-c8b88cfd9f28"
     },
     {
       "id": "2ea3071d-6d0f-43ef-aca8-d70cfc9a6555",

@@ -1,11 +1,6 @@
 <template>
   <div class="newform-result-container">
-    <el-tabs
-      v-model="activeName"
-      class="newform-result-tabs"
-      @tab-change="handleChange"
-    >
-    </el-tabs>
+    <el-tabs v-model="activeName" class="newform-result-tabs"> </el-tabs>
     <ul class="newform-result-nav">
       <li>
         <a @click="goToOtherPage('statistical-details')">数据详情&统计</a>
@@ -53,12 +48,12 @@ export default defineComponent({
     };
   },
   created() {
-    this.$router.push({
-      name: "statistical-details",
-      query: {
-        id: this.formId,
-      },
-    });
+    // this.$router.push({
+    //   name: "statistical-details",
+    //   query: {
+    //     id: this.formId,
+    //   },
+    // });
   },
 });
 </script>
@@ -69,9 +64,11 @@ export default defineComponent({
   margin-top: 56px;
   overflow: hidden;
 }
+
 .newform-result-nav {
   margin-top: 10px;
 }
+
 .newform-result-nav li a {
   margin: 20px;
   font-size: 18px;

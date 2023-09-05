@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive, onBeforeMount } from "vue";
+import { defineComponent, ref, reactive, onBeforeMount, PropType } from "vue";
 import { useRouter } from "vue-router";
 import * as api from "@/services/api";
 import { IUser, IForm, IProblem } from "../types/types";
@@ -182,20 +182,24 @@ export default defineComponent({
   font-weight: 600;
   margin-bottom: 20px;
 }
+
 .form-subTitile {
   font-size: 16px;
   color: #ccc;
   text-align: center;
   margin-bottom: 40px;
 }
+
 .form-submit {
   width: 96px;
 }
+
 .form-submit-area {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
+
 .form-submit {
   width: 96px;
 }

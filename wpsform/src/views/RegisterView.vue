@@ -16,59 +16,25 @@
           <div class="register-title">WPS注册</div>
         </div>
         <!-- 输入框和按钮 -->
-        <el-form
-          :model="ruleForm"
-          :rules="rules"
-          ref="ruleFormRef"
-          status-icon="true"
-        >
+        <el-form :model="ruleForm" :rules="rules" ref="ruleFormRef" status-icon="true">
           <el-form-item prop="account">
-            <el-input
-              class="text-input"
-              placeholder="用户名"
-              v-model="ruleForm.account"
-              @focus="onAccount"
-              @focusout="outAccount"
-            ></el-input>
+            <el-input class="text-input" placeholder="用户名" v-model="ruleForm.account" @focus="onAccount"
+              @focusout="outAccount"></el-input>
           </el-form-item>
-          <span class="accountTip tip" v-show="accountTip"
-            >6~18个字符，可使用字母、数字、下划线</span
-          >
+          <span class="accountTip tip" v-show="accountTip">6~18个字符，可使用字母、数字、下划线</span>
 
           <el-form-item prop="password">
-            <el-input
-              class="text-input"
-              placeholder="密码"
-              type="password"
-              v-model="ruleForm.password"
-              @focus="onPassword"
-              @focusout="outPassword"
-              autocomplete="off"
-              show-password
-            ></el-input>
+            <el-input class="text-input" placeholder="密码" type="password" v-model="ruleForm.password" @focus="onPassword"
+              @focusout="outPassword" autocomplete="off" show-password></el-input>
           </el-form-item>
-          <span class="passwordTip tip" v-show="passwordTip"
-            >必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-20个字符之间</span
-          >
+          <span class="passwordTip tip" v-show="passwordTip">必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-20个字符之间</span>
           <el-form-item prop="confirm_password">
-            <el-input
-              class="text-input"
-              placeholder="确认密码"
-              v-model="ruleForm.confirm_password"
-              @focus="onConfirmPwd"
-              @focusout="outConfirmPwd"
-              @keyup.enter.native="submitForm"
-              autocomplete="off"
-              show-password
-            ></el-input>
+            <el-input class="text-input" placeholder="确认密码" v-model="ruleForm.confirm_password" @focus="onConfirmPwd"
+              @focusout="outConfirmPwd" @keyup.enter.native="submitForm" autocomplete="off" show-password></el-input>
           </el-form-item>
-          <span class="confirmPwdTip tip" v-show="confirmPwdTip"
-            >请再输入一次密码</span
-          >
+          <span class="confirmPwdTip tip" v-show="confirmPwdTip">请再输入一次密码</span>
         </el-form>
-        <el-button class="register-btn" type="primary" @click="submitForm"
-          >立即注册</el-button
-        >
+        <el-button class="register-btn" type="primary" @click="submitForm">立即注册</el-button>
       </div>
     </div>
   </div>
@@ -233,6 +199,7 @@ export default defineComponent({
   background-color: #fff;
   height: 100%;
 }
+
 .page-left {
   width: 580px;
   height: 100%;
@@ -242,6 +209,7 @@ export default defineComponent({
   background-position: 80% 0;
   background-repeat: no-repeat;
 }
+
 .top-logo {
   position: absolute;
   top: 20px;
@@ -252,6 +220,7 @@ export default defineComponent({
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+
 .page-right {
   flex: 1;
   display: flex;
@@ -263,6 +232,7 @@ export default defineComponent({
     "WenQuanYi Micro Hei";
   /* background-color: #B0E2FF; */
 }
+
 .register-box {
   display: flex;
   position: relative;
@@ -271,115 +241,140 @@ export default defineComponent({
   align-items: flex-start;
   margin-top: 150px;
 }
+
 .register-box-top {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
 }
+
 .back-icon {
   font-size: 35px;
   margin-top: -1px;
   color: #a1a1a1;
   cursor: pointer;
 }
+
 .back-icon:hover {
   color: #409eff;
 }
+
 .register-title {
   margin-left: 20px;
   font-size: 42px;
   font-weight: 600;
   color: #000;
 }
+
 .text-input {
   width: 450px;
   height: 50px;
   margin: 15px 0;
   font-size: 20px;
 }
+
 .tip {
   position: absolute;
   font-size: 14px;
   color: #8b8989;
 }
+
 .accountTip {
   top: 178px;
   left: 0;
 }
+
 .passwordTip {
   top: 275px;
   left: 0;
 }
+
 .confirmPwdTip {
   top: 374px;
   left: 0;
 }
+
 .register-btn {
   width: 450px;
   height: 50px;
   margin-top: 20px;
   font-size: 18px;
 }
+
 /* 响应式 */
 @media screen and (max-width: 768px) {
   .page-left {
     width: 0;
   }
+
   .top-logo {
     top: 15px;
     left: 15px;
     width: 249px;
     height: 22.5px;
   }
+
   .back-icon {
     font-size: 33px;
     margin-top: 2px;
   }
+
   .register-box {
     margin-top: 120px;
   }
+
   .register-box-top {
     margin-bottom: 30px;
   }
+
   .register-title {
     margin-left: 10px;
   }
+
   .register-title {
     font-size: 35px;
     font-weight: 600;
     color: #000;
   }
+
   .text-input {
     width: 300px;
     height: 45px;
     margin: 10px 0;
     font-size: 16px;
   }
+
   .tip {
     position: absolute;
     font-size: 12px;
     color: #8b8989;
   }
+
   .accountTip {
     top: 140px;
   }
+
   .passwordTip {
     top: 216px;
   }
+
   .confirmPwdTip {
     top: 302px;
   }
+
   .operate-box {
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
   }
+
   .register-btn {
     align-self: center;
     width: 150px;
     height: 50px;
     font-size: 18px;
   }
+
   .goLogin {
     margin-top: 15px;
   }

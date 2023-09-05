@@ -53,8 +53,9 @@
                   :size="15"
                   color="#1488ED"
                   @click="delThisCommomUse(ques.id)"
-                  ><CircleCloseFilled
-                /></el-icon>
+                >
+                  <CircleCloseFilled />
+                </el-icon>
                 <a @click="addTemplateToQuesList(ques)">{{ ques.title }}</a>
               </li>
             </ul>
@@ -94,7 +95,8 @@
           @addQuesToQuesList="addQuesToQuesList"
           @click="currentPointHere(index + 2)"
           :selectedIndex="currentPoint - 2"
-        ></MyQuestion>
+        >
+        </MyQuestion>
         <div class="end-line">
           <div class="bottom-line"></div>
           <div class="end">End</div>
@@ -122,10 +124,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, computed, ref } from "vue";
+import { defineComponent, reactive, computed, ref, watch } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
-import * as API from "../services/api";
 import axios from "axios";
 import { ElMessage } from "element-plus";
 import MyQuestion from "../components/MyQuestion.vue";
@@ -150,8 +151,14 @@ export default defineComponent({
     // 我的常用题
     const myCommonUse = computed(() => Store.state.problem.commonUseQues);
     // 表单标题
-    const formTitle = ref("");
-    const formSubTitle = ref("");
+    const formTitle = ref(Store.state.form.formTitle);
+    watch(formTitle, (newVal: string) => {
+      Store.commit("form/setFormTitle", newVal);
+    });
+    const formSubTitle = ref(Store.state.form.formSubTitle);
+    watch(formSubTitle, (newVal: string) => {
+      Store.commit("form/setFormSubTitle", newVal);
+    });
     // 中间题目列表
     const questionList = computed<IProblem[]>(
       () => Store.state.form.questionList
@@ -221,6 +228,13 @@ export default defineComponent({
       if (isCompleted() === true) {
         Router.push({
           name: "form-preview",
+          // params: {
+          //   form: JSON.stringify({
+          //     title: formTitle.value,
+          //     subTitle: formSubTitle.value,
+          //     problems: questionList.value,
+          //   }),
+          // },
         });
       }
     };
@@ -228,12 +242,28 @@ export default defineComponent({
     const clearFormList = () => {
       Store.commit("form/clearFormList");
       console.log("清空后的列表", questionList);
+      ElMessage({
+        message: "清空表单成功",
+        type: "success",
+        center: true,
+      });
     };
     // 使用草稿
     const useDraft = () => {
+      if (!Store.state.form.formTitleDraft)
+        return ElMessage({
+          message: "未找到草稿",
+          type: "warning",
+          center: true,
+        });
       formTitle.value = Store.state.form.formTitleDraft;
       formSubTitle.value = Store.state.form.formSubTitleDraft;
       Store.commit("form/useDraft");
+      ElMessage({
+        message: "读取成功",
+        type: "success",
+        center: true,
+      });
     };
     // 保存草稿
     const saveDraft = () => {
@@ -241,6 +271,11 @@ export default defineComponent({
         Store.commit("form/setFormTitleDraft", formTitle.value);
         Store.commit("form/setFormSubTitleDraft", formSubTitle.value);
         Store.commit("form/saveDraft");
+        ElMessage({
+          message: "保存成功",
+          type: "success",
+          center: true,
+        });
       }
     };
     // 创建表单
@@ -259,17 +294,26 @@ export default defineComponent({
           });
           // 创建成功
           if (res.data.stat === "ok") {
-            const formId = res.data.data.id;
+            ElMessage({
+              message: "创建成功",
+              type: "success",
+              center: true,
+            });
             Router.push({
               name: "share",
               query: {
-                id: formId,
+                id: res.data.data.id,
               },
             });
             // Store.commit("form/clearFormList");
           }
         } catch (e: any) {
           console.log(e.message);
+          ElMessage({
+            message: e.message,
+            type: "error",
+            center: true,
+          });
         }
       }
     };
@@ -371,10 +415,12 @@ export default defineComponent({
   display: flex;
   justify-content: center;
 }
+
 .newform-create {
   display: flex;
   justify-content: space-between;
 }
+
 .question-panel,
 .other-option,
 .question-list,
@@ -386,6 +432,7 @@ export default defineComponent({
   overflow-y: auto;
   margin: 10px;
 }
+
 .question-panel,
 .other-option {
   width: 220px;
@@ -393,15 +440,18 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
 }
+
 .question-panel {
   height: 400px;
   padding: 24px 16px;
   max-height: calc(100vh - 100px);
 }
+
 .question-formwork-wrapper {
   display: flex;
   flex-direction: column;
 }
+
 .optionTitle {
   width: 100%;
   font-size: 14px;
@@ -410,19 +460,23 @@ export default defineComponent({
   margin-bottom: 30px;
   position: relative;
 }
+
 .optionTitle:last-child {
   margin-bottom: 0;
 }
+
 .manage-common-use {
   position: absolute;
   top: 0;
   right: 0;
 }
+
 .manage-common-use a {
   color: #1488ed;
   font-size: 13px;
   cursor: pointer;
 }
+
 .add-question,
 .question-formwork,
 .my-common-use {
@@ -431,6 +485,7 @@ export default defineComponent({
   align-content: flex-start;
   flex-wrap: wrap;
 }
+
 .question-type-item,
 .question-formwork-item,
 .my-common-use-item {
@@ -444,22 +499,26 @@ export default defineComponent({
   cursor: pointer;
   position: relative;
 }
+
 .delCommonUse {
   position: absolute;
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
 }
+
 .delCommonUse:hover {
   transform: translate(50%, -50%) scale(1.3);
   transition: all 0.2s;
   pointer-events: visiblePainted;
 }
+
 .question-type-item:hover,
 .question-formwork-item:hover,
 .my-common-use-item-no-manage:hover {
   border: 1px solid #1488ed;
 }
+
 .question-type-item a,
 .question-formwork-item a,
 .my-common-use-item a {
@@ -470,6 +529,7 @@ export default defineComponent({
   font-size: 12px;
   font-weight: 500;
 }
+
 .question-list,
 .please-add-ques {
   width: 670px;
@@ -480,6 +540,7 @@ export default defineComponent({
   align-items: center;
   box-sizing: border-box;
 }
+
 .please-add-ques {
   display: flex;
   justify-content: center;
@@ -494,6 +555,7 @@ export default defineComponent({
   text-align: center;
   color: #3d4757;
 }
+
 .formTitle h1,
 .formSubTitle h2 {
   width: 300px;
@@ -506,6 +568,7 @@ export default defineComponent({
   font-size: 20px;
   font-weight: 700;
 }
+
 .formTitle input {
   outline: none;
   text-align: center;
@@ -516,6 +579,7 @@ export default defineComponent({
   line-height: 2;
   border: none;
 }
+
 .formSubTitle input {
   text-align: center;
   width: 100%;
@@ -524,15 +588,18 @@ export default defineComponent({
   border-bottom: 1px solid #e7eaee;
   outline: none;
 }
+
 .formSubTitle {
   margin: 20px 0 0;
   padding: 12px 20px;
 }
+
 .formSubTitle h2 {
   color: #aeb5c0;
   font-size: 15px;
   font-weight: 400;
 }
+
 .end-line {
   margin: 40px 0 0;
   width: 90%;
@@ -540,15 +607,18 @@ export default defineComponent({
   justify-content: space-between;
   align-items: center;
 }
+
 .end {
   color: #767c85;
   font-size: 15px;
 }
+
 .bottom-line {
   width: 40%;
   height: 0;
   border: 1px dashed #e7e9eb;
 }
+
 .other-option {
   display: flex;
   align-items: center;
@@ -556,16 +626,19 @@ export default defineComponent({
   background-color: transparent;
   border: none;
 }
+
 .other-option div {
   width: 100%;
   margin-bottom: 20px;
   height: 32px;
   display: flex;
 }
+
 .preview-clear,
 .use-save-draft {
   justify-content: space-between;
 }
+
 .preview-clear button,
 .use-save-draft button {
   color: #3d4757;
@@ -574,13 +647,16 @@ export default defineComponent({
   border: 1px solid #e7e9eb;
   border-radius: 2px;
 }
+
 .preview,
 .use-draft {
   margin-right: 10px;
 }
+
 .complate-creat {
   justify-content: center;
 }
+
 .finished {
   color: #fff;
   background-color: #1488ed;

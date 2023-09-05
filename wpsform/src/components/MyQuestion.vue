@@ -67,7 +67,9 @@
         :label="problem.isNew ? '允许重复' : '不允许重复'"
         size="large"
       />
-      <el-icon><Warning /></el-icon>
+      <el-icon>
+        <Warning />
+      </el-icon>
     </div>
     <!-- 问题配置区 -->
     <div class="problem-option" v-if="selectedIndex === index">
@@ -96,12 +98,16 @@
         <!-- 必填 -->
         <div class="must-fill-in">
           <el-checkbox v-model="problem.required" label="必填" size="large" />
-          <el-icon><CaretBottom /></el-icon>
+          <el-icon>
+            <CaretBottom />
+          </el-icon>
         </div>
         <!-- 删除 -->
         <div class="del-problem">
           <el-dropdown>
-            <el-icon @click="delThisProblem"><Delete /></el-icon>
+            <el-icon @click="delThisProblem">
+              <Delete />
+            </el-icon>
             <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item @click="delThisProblem"
@@ -111,7 +117,9 @@
             </template>
           </el-dropdown>
           <el-dropdown>
-            <el-icon><MoreFilled /></el-icon>
+            <el-icon>
+              <MoreFilled />
+            </el-icon>
             <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item @click="addThisProblemToCommonUse"
@@ -232,13 +240,16 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
 }
+
 .question-selected {
   box-shadow: 0 4px 16px 0 rgb(192 198 207 / 50%);
   transition: all 0.3s;
 }
+
 .question > div:not(:last-child) {
   margin-bottom: 10px;
 }
+
 .problem-title {
   padding: 8px 0 5px 0;
   position: relative;
@@ -248,6 +259,7 @@ export default defineComponent({
   color: #3d4757;
   margin-bottom: 10px;
 }
+
 .problem-title:hover {
   border-bottom: 1px solid #e7eaee;
 }
@@ -258,6 +270,7 @@ export default defineComponent({
   font-weight: bold;
   text-indent: 15px;
 }
+
 .problem-setting {
   font-size: 12px;
   display: flex;
@@ -267,6 +280,7 @@ export default defineComponent({
 .problem-setting .el-icon {
   margin-left: 4px;
 }
+
 .problem-option {
   display: flex;
   justify-content: space-between;
@@ -274,10 +288,12 @@ export default defineComponent({
   font-size: 12px;
   color: #767c85;
 }
+
 .problem-option > div {
   display: flex;
   align-items: center;
 }
+
 .problem-option > div:not(:last-child) {
   margin-right: 10px;
 }
@@ -285,11 +301,13 @@ export default defineComponent({
 .problem-type-change div.el-select {
   width: 85px;
 }
+
 .right-option > div {
   height: 40px;
   display: flex;
   align-items: center;
 }
+
 .right-option > div:not(:last-child)::after {
   content: "";
   display: inline-block;
@@ -299,17 +317,21 @@ export default defineComponent({
   vertical-align: middle;
   margin: 0 10px;
 }
+
 .copy button.el-button {
   width: 40px;
   height: 22px;
 }
+
 .must-fill-in label.el-checkbox {
   margin-left: 7px;
   margin-right: 3px;
 }
+
 .del-problem {
   height: inherit;
 }
+
 .del-problem > .el-dropdown {
   margin: 0 2px;
 }

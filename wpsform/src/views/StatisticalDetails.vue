@@ -119,33 +119,42 @@ export default defineComponent({
   margin: 50px;
   overflow: auto;
 }
+
 .formlist-content {
   margin: 100px;
 }
+
 .statistics-title {
   font-size: 20px;
 }
+
 .formindex-choose {
   margin: 20px 0;
 }
+
 .icon-arrow-left,
 .icon-angle-right-o-thin,
 .form-index {
   background-color: rgb(242, 244, 247);
 }
+
 .icon-arrow-left {
   margin-right: 10px;
 }
+
 .icon-angle-right-o-thin {
   margin-left: 10px;
 }
+
 .form-index {
   padding: 0 20px;
   align-items: baseline;
 }
+
 .form-main {
   margin-top: 20px;
 }
+
 .input-time {
   color: gray;
 }

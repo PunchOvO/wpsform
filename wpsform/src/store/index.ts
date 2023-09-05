@@ -9,6 +9,5 @@ export default createStore({
   getters: {},
   mutations: {},
   actions: {},
-  // modules: { user, form, problem },
   modules: { form, problem, user },
 });

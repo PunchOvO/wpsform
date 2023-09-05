@@ -102,11 +102,13 @@ export default defineComponent({
 .date-type:hover {
   border-bottom: 1px dashed #e8ebee;
 }
+
 .date-type-select {
   margin-top: 10px;
   display: flex;
   align-items: center;
 }
+
 .el-select {
   margin-left: 5px;
   width: 140px;
