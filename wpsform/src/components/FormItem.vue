@@ -176,10 +176,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.form-item {
+  background-color: #fff;
+  padding: 10px 50px 30px;
+}
+
 .form-title {
   text-align: center;
   font-size: 20px;
   font-weight: 600;
+  padding-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -202,5 +208,11 @@ export default defineComponent({
 
 .form-submit {
   width: 96px;
+}
+
+@media screen and (min-width: 1366px) {
+  .form-item {
+    padding: 30px 100px 30px;
+  }
 }
 </style>

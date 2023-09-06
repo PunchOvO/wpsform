@@ -93,7 +93,6 @@
         </div>
         <el-button class="next" @click="goNext">下一页</el-button>
       </div>
-      <el-button @click="createFormTest">新建表单(测试用)</el-button>
     </el-main>
   </el-container>
 </template>
@@ -158,8 +157,8 @@ export default defineComponent({
       }
       //跳转到表单详情页面
       router.push({
-        name: "statistical-details",
-        params: {
+        name: "new-form-result",
+        query: {
           id: row.id,
         },
       });
@@ -192,7 +191,7 @@ export default defineComponent({
     const goSharePage = (id: string) => {
       router.push({
         name: "share",
-        params: {
+        query: {
           id,
         },
       });
@@ -200,13 +199,9 @@ export default defineComponent({
 
     //查看结果按钮，数据详情页面
     const showResult = async (id: string) => {
-      // const res = await api.getFormResult(id)
-      // if(res.stat == 'ok') {
-      //   console.log(res);
-      // }
       router.push({
         name: "statistical-details",
-        params: {
+        query: {
           id,
         },
       });
@@ -388,6 +383,7 @@ export default defineComponent({
 .form-list {
   margin-top: 56px;
 }
+
 .form-list-aside {
   display: flex;
   flex-direction: column;
@@ -395,6 +391,7 @@ export default defineComponent({
   border: 1px solid #ccc;
   border-top: 0;
 }
+
 .form-list-aside-top {
   padding: 40px;
 }
@@ -412,6 +409,7 @@ export default defineComponent({
   width: 100%;
   padding: 30px 0;
 }
+
 .form-list-container {
   flex: 1;
   margin: 20px;
@@ -445,6 +443,7 @@ export default defineComponent({
   margin-right: 30px;
   cursor: pointer;
 }
+
 .count {
   margin: 0 15px;
 }
@@ -453,6 +452,7 @@ export default defineComponent({
 .icon-star-full {
   font-size: 24px;
 }
+
 .icon-star-full {
   color: #f8d61d;
 }

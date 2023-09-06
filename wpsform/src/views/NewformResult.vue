@@ -62,11 +62,15 @@ export default defineComponent({
 .newform-result-container {
   height: 100%;
   margin-top: 56px;
-  overflow: hidden;
+  overflow: auto;
+  background-color: #f2f4f7;
 }
 
 .newform-result-nav {
   margin-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
 }
 
 .newform-result-nav li a {
@@ -74,8 +78,7 @@ export default defineComponent({
   font-size: 18px;
 }
 
-/* 分享页面 */
-#pane-share {
-  height: calc(100vh - 180px);
+.newform-result-nav li a:hover {
+  color: #339cfe;
 }
 </style>

@@ -11,32 +11,17 @@
         <div class="login-box-top">
           <div class="login-title">欢迎使用WPS！</div>
         </div>
-        <el-form
-          :model="ruleForm"
-          :rules="rules"
-          ref="ruleFormRef"
-        >
+        <el-form :model="ruleForm" :rules="rules" ref="ruleFormRef">
           <el-form-item prop="account">
-            <el-input
-              class="text-input"
-              placeholder="用户名"
-              v-model="ruleForm.account"
-            ></el-input>
+            <el-input class="text-input" placeholder="用户名" v-model="ruleForm.account"></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input
-              class="text-input"
-              placeholder="密码"
-              v-model="ruleForm.password"
-              show-password
-              @keyup.enter.native="submitForm"
-            ></el-input>
+            <el-input class="text-input" placeholder="密码" v-model="ruleForm.password" show-password
+              @keyup.enter.native="submitForm"></el-input>
           </el-form-item>
         </el-form>
         <div class="operate-box">
-          <el-button class="login-btn" type="primary" @click="submitForm"
-            >立即登录</el-button
-          >
+          <el-button class="login-btn" type="primary" @click="submitForm">立即登录</el-button>
           <div class="goregister">
             <span>没有账号？</span>
             <router-link to="/register">立即注册</router-link>
@@ -80,7 +65,7 @@ export default defineComponent({
     const goRegister = () => {
       router.push("/Register");
     };
-    
+
     //登录请求
     const login = async () => {
       try {
@@ -90,12 +75,12 @@ export default defineComponent({
           router.push("/app");
           // 修改登录状态
           store.commit("user/setLoginState", true);
-          window.sessionStorage.setItem("login", "true");
+          window.localStorage.setItem("login", "true");
           // 记录用户信息
           const userRes = await api.getUserInfo()
-          if(userRes.stat == 'ok') {
+          if (userRes.stat == 'ok') {
             store.commit("user/setUserInfo", userRes.data.user);
-            window.sessionStorage.setItem("user", JSON.stringify(userRes.data.user));
+            window.localStorage.setItem("user", JSON.stringify(userRes.data.user));
           }
         } else {
           ElMessage.error("账号或密码错误");
@@ -133,6 +118,7 @@ export default defineComponent({
   background-color: #fff;
   height: 100%;
 }
+
 .page-left {
   width: 580px;
   height: 100%;
@@ -142,6 +128,7 @@ export default defineComponent({
   background-position: 80% 0;
   background-repeat: no-repeat;
 }
+
 .top-logo {
   position: absolute;
   top: 20px;
@@ -152,6 +139,7 @@ export default defineComponent({
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+
 .page-right {
   flex: 1;
   display: flex;
@@ -163,6 +151,7 @@ export default defineComponent({
     "WenQuanYi Micro Hei";
   /* background-color: #B0E2FF; */
 }
+
 .login-box {
   display: flex;
   flex-direction: column;
@@ -170,22 +159,26 @@ export default defineComponent({
   align-items: flex-start;
   margin-top: 150px;
 }
+
 .login-box-top {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
 }
+
 .login-title {
   font-size: 42px;
   font-weight: 600;
   color: #000;
 }
+
 .text-input {
   width: 450px;
   height: 50px;
   margin: 20px 0;
   font-size: 20px;
 }
+
 .operate-box {
   display: flex;
   justify-content: space-between;
@@ -193,50 +186,60 @@ export default defineComponent({
   width: 100%;
   margin-top: 20px;
 }
+
 .login-btn {
   width: 200px;
   height: 50px;
   font-size: 18px;
 }
+
 /* 响应式 */
 @media screen and (max-width: 768px) {
   .page-left {
     width: 0;
   }
+
   .top-logo {
-  top: 15px;
-  left: 15px;
-  width: 249px;
-  height: 22.5px;
-}
+    top: 15px;
+    left: 15px;
+    width: 249px;
+    height: 22.5px;
+  }
+
   .login-box {
     margin-top: 120px;
     align-items: center;
   }
+
   .login-box-top {
     margin-bottom: 30px;
   }
+
   .login-title {
     font-size: 35px;
     font-weight: 600;
     color: #000;
   }
+
   .text-input {
     width: 300px;
     height: 45px;
     margin: 10px 0;
     font-size: 16px;
   }
+
   .operate-box {
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
   }
+
   .login-btn {
     width: 150px;
     height: 50px;
     font-size: 18px;
   }
+
   .goregister {
     margin-top: 15px;
   }

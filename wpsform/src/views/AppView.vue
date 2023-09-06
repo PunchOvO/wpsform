@@ -73,6 +73,7 @@ import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import * as api from "@/services/api";
 import { IUser, IForm, IProblem } from "../types/types";
+import { ElMessage } from "element-plus";
 
 export default defineComponent({
   name: "AppView",
@@ -108,11 +109,23 @@ export default defineComponent({
       const res = await api.getUserInfo();
       if (res.stat == "ok") {
         store.commit("user/setUserInfo", res.data.user);
+      } else {
+        ElMessage.error("用户未登录！");
+        window.localStorage.removeItem("login");
+        window.localStorage.removeItem("user");
+        router.push("/login");
       }
     };
 
     onBeforeMount(() => {
-      getUserInfo();
+      //判断登录状态，未登录则跳转到登录页面
+      if (store.state.user.loginState == false) {
+        router.replace("/login");
+      }
+      //登录则直接获取用户信息
+      else {
+        getUserInfo();
+      }
       // console.log(typeof store.state.userInfo)
     });
 
@@ -217,52 +230,4 @@ export default defineComponent({
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* .app-user-option {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  padding: 12px;
-  box-sizing: border-box;
-  background: white;
-  box-shadow: 0 2px 12px 0 rgb(56 56 56 / 20%);
-  border-radius: 2px;
-  border: 1px solid #d3d3d3;
-  display: none;
-  flex-direction: column;
-}
-.app-user:hover .app-user-option {
-  display: flex;
-}
-.app-user-title {
-  width: 80px;
-  font-size: 14px;
-  padding: 0 10px 16px;
-  color: #3d4757;
-  font-weight: 600;
-  line-height: 14px;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-bottom: 1px solid #e2e6ed;
-}
-.app-user-option-list {
-  margin-top: 3px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.app-user-option-item:hover {
-  background-color: #FAFAFA;
-  transition: all 0.2s;
-}
-.app-user-option-item a {
-  padding: 0 10px;
-  font-size: 12px;
-  line-height: 30px;
-  color: #3d4757;
-  white-space: nowrap;
-  cursor: pointer;
-  margin-top: 4px;
-} */
 </style>

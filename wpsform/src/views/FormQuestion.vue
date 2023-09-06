@@ -70,6 +70,7 @@ export default defineComponent({
   margin: 0 auto;
   overflow: auto;
 }
+
 .form-question-content {
   min-height: 100%;
   background-color: #fff;
@@ -86,10 +87,12 @@ export default defineComponent({
   background-color: #fff;
   padding: 15px 0;
 }
+
 .form-write-btn {
   width: 96px;
   margin-left: -16px;
 }
+
 @media screen and (min-width: 768px) {
   .form-question-main {
     width: 80%;
@@ -98,6 +101,7 @@ export default defineComponent({
     padding: 36px 80px 50px;
   }
 }
+
 @media screen and (min-width: 1366px) {
   .form-question-main {
     width: 60%;

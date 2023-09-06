@@ -8,7 +8,7 @@
     </div>
     <div class="copy-btn-box">
       <button class="copy-btn" @click="cpoyShareUrl">
-        <el-icon><Paperclip /></el-icon>复制链接
+        <el-icon> <Paperclip /> </el-icon>复制链接
       </button>
     </div>
   </div>
@@ -35,13 +35,13 @@ export default defineComponent({
       try {
         await toClipboard(shareUrl.value);
         ElMessage({
-          message: "复制成功！",
+          message: "恭喜恭喜 复制成功",
           type: "success",
           center: true,
         });
       } catch (e) {
         ElMessage({
-          message: "抱歉，复制失败！",
+          message: "很遗憾 复制失败 再接再厉吧",
           type: "error",
           center: true,
         });
@@ -76,20 +76,24 @@ export default defineComponent({
   justify-content: space-between;
   flex-direction: column;
 }
+
 .title-box {
   width: 100%;
   height: 50px;
   border-bottom: 1px solid #e7e9eb;
 }
+
 .title {
   line-height: 30px;
   font-size: 20px;
 }
+
 .code-box {
   flex: 1;
   display: flex;
   align-items: center;
 }
+
 .copy-btn-box {
   width: 100%;
   height: 50px;
@@ -98,6 +102,7 @@ export default defineComponent({
   align-items: flex-end;
   border-top: 1px solid #e7e9eb;
 }
+
 .copy-btn {
   width: 100px;
   height: 30px;

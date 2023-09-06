@@ -60,6 +60,7 @@ export default defineComponent({
 .form-write-container {
   height: 100%;
 }
+
 .form-write-header {
   display: flex;
   align-items: center;
@@ -71,10 +72,12 @@ export default defineComponent({
   font-size: 20px;
   font-weight: 600;
 }
+
 .form-write-main {
   background-color: #f2f4f7;
   margin-top: 56px;
 }
+
 .form-write-content {
   width: 100%;
   min-width: 330px;
@@ -83,12 +86,14 @@ export default defineComponent({
   padding: 30px 50px 0;
   margin: 0 auto;
 }
+
 @media screen and (min-width: 768px) {
   .form-write-content {
     width: 80%;
     padding: 40px 70px 50px;
   }
 }
+
 @media screen and (min-width: 1366px) {
   .form-write-content {
     width: 50%;
