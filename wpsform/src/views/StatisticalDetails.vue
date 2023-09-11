@@ -2,8 +2,8 @@
   <div class="formList-main">
     <div class="formlist-content">
       <span class="statistics-title"
-        >共收集 {{ formList.length }} 份数据 （正在收集）</span
-      >
+        >共收集 {{ formList.length }} 份数据 （正在收集）({{ statustext }})
+      </span>
       <div class="formindex-choose">
         <i class="iconfont icon-arrow-left" @click="IndexDown"></i>
         第 <span class="form-index"> {{ index + 1 }} </span> 份
@@ -12,7 +12,12 @@
       <hr />
       <div class="form-main">
         <span class="input-time">提交时间：{{ TransformData(time) }}</span>
-        <FormInfo v-if="formId" :id="formId" :disableWrite="true"></FormInfo>
+        <FormInfo
+          v-if="formId"
+          :id="formId"
+          :Findex="index"
+          :disableWrite="true"
+        ></FormInfo>
       </div>
     </div>
   </div>
@@ -46,13 +51,23 @@ export default defineComponent({
       }
     };
 
-    // 获取form创建时间
+    // 获取form创建时间和form的状态
     const time = ref(0);
+    const status = ref(0 as number);
+    const statustext = ref("" as string);
     const getForm = async (formid: string) => {
       const res = await api.getForm(formid);
       console.log("@@$$!!", res);
       if (res.stat == "ok") {
         time.value = res.data.item.ctime;
+        status.value = res.data.item.status;
+        if (status.value == 2) {
+          statustext.value = "未发布";
+        } else if (status.value == 3) {
+          statustext.value = "正在收集中";
+        } else if (status.value == 4) {
+          statustext.value = "收集结束";
+        }
       }
     };
 
@@ -98,6 +113,7 @@ export default defineComponent({
       formId,
       index,
       time,
+      statustext,
       formList,
       TransformData,
       IndexDown,
@@ -116,12 +132,12 @@ export default defineComponent({
 
 <style scoped>
 .formlist-main {
-  margin: 50px;
+  margin: 20px;
   overflow: auto;
 }
 
 .formlist-content {
-  margin: 100px;
+  margin: 50px 100px;
 }
 
 .statistics-title {

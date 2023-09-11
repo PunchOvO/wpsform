@@ -73,8 +73,10 @@ export default defineComponent({
 
 .form-question-content {
   min-height: 100%;
+  width: 100%;
   background-color: #fff;
-  padding: 30px 60px 0;
+  /* padding: 30px 60px 0; */
+  overflow: auto;
 }
 
 .form-write-area {
