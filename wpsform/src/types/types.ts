@@ -26,7 +26,7 @@ export interface IFormResult {
 }
 
 export interface IProblem {
-  id?: string;
+  id: string;
   title: string;
   type:
     | "input"
@@ -37,13 +37,9 @@ export interface IProblem {
     | "time"
     | "score";
   required: boolean;
-  isNew?: boolean;
+  isNew: boolean;
   setting?: {
-    options?: {
-      title: string;
-      status: 1 | 2;
-      id?: string;
-    }[];
+    options?: option[];
   };
   result?: {
     value:
@@ -59,4 +55,10 @@ export interface IProblem {
         }[];
   };
   [propName: string]: any;
+}
+
+export interface option {
+  title: string;
+  status: 1 | 2;
+  id?: string;
 }

@@ -93,6 +93,7 @@ export default defineComponent({
   overflow: auto;
   margin: 50px 0;
 }
+
 .subTitle {
   text-align: center;
 }

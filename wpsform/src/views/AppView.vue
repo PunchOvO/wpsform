@@ -145,9 +145,11 @@ export default defineComponent({
 .app-container {
   height: 100%;
 }
+
 .app-top {
   padding: 0 16px;
 }
+
 .app-top {
   width: 100%;
   background-color: #fff;
@@ -162,6 +164,7 @@ export default defineComponent({
   left: 0;
   z-index: 999;
 }
+
 .app-logo {
   font-size: 18px;
   color: #3c414b;
@@ -174,12 +177,14 @@ export default defineComponent({
   vertical-align: top;
   margin-right: 10px;
 }
+
 .app-logoArea {
   display: flex;
   align-items: center;
   font-weight: 600;
   font-size: 14px;
 }
+
 .app-logoArea span {
   margin-left: 5px;
 }
@@ -216,9 +221,11 @@ export default defineComponent({
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.3);
 }
+
 .app-user-icon img {
   width: 100%;
 }
+
 .app-user-title {
   width: 80px;
   font-size: 16px;

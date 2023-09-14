@@ -26,7 +26,7 @@
 <script lang="ts">
 import { defineComponent, ref, reactive, computed, watch, PropType } from "vue";
 import { useStore } from "vuex";
-import { IProblem } from "../types/types";
+import { IProblem } from "@/types/types";
 export default defineComponent({
   name: "TimeQuestion",
   props: {

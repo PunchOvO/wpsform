@@ -16,8 +16,8 @@ import { defineComponent, onBeforeMount, ref, reactive } from "vue";
 import { useStore } from "vuex";
 import { useRouter, useRoute } from "vue-router";
 import router from "vue-router";
-import * as api from '@/services/api'
-import { ElMessage } from 'element-plus'
+import * as api from "@/services/api";
+import { ElMessage } from "element-plus";
 
 export default defineComponent({
   name: "NewformResult",
@@ -29,28 +29,27 @@ export default defineComponent({
     const formId = ref(Route.query.id as string);
 
     const goToOtherPage = async (tabPaneName: string) => {
-      if(tabPaneName == 'share') {
-        const res = await api.getForm(formId.value)
-        if(res.stat == 'ok') {
-          if(res.data.item.status != 3) {
-            ElMessage.error('表单未发布或者已经结束收集')
-          }
-          else {
+      if (tabPaneName == "share") {
+        const res = await api.getForm(formId.value);
+        if (res.stat == "ok") {
+          if (res.data.item.status != 3) {
+            ElMessage.error("表单未发布或者已经结束收集");
+          } else {
             Router.push({
-        name: tabPaneName,
-        query: {
-          id: formId.value,
-        },
-      });
+              name: tabPaneName,
+              query: {
+                id: formId.value,
+              },
+            });
           }
         }
       } else {
         Router.push({
-        name: tabPaneName,
-        query: {
-          id: formId.value,
-        },
-      });
+          name: tabPaneName,
+          query: {
+            id: formId.value,
+          },
+        });
       }
     };
     onBeforeMount(() => {
