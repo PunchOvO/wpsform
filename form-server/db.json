@@ -626,6 +626,102 @@
           "id": "ee010efe-36f3-4db7-9f5c-a41afb815785"
         }
       ]
+    },
+    {
+      "id": "49a206d4-fe7d-41ec-b37a-ec1c9f7a1020",
+      "ctime": 1694683265638,
+      "utime": 1694683265638,
+      "status": 3,
+      "author": "7c265a60-eb4f-418f-bf02-dd799f754381",
+      "isStar": true,
+      "title": " 怎么有人会这么低能",
+      "subTitle": "什么垃圾都有",
+      "problems": [
+        {
+          "id": "7ca10979-6d04-4647-b10d-f6961071a537",
+          "isNew": true,
+          "title": "病号几",
+          "type": "input",
+          "required": true,
+          "setting": null
+        },
+        {
+          "id": "21884d43-866b-4939-a49f-5da0b4b446a5",
+          "isNew": true,
+          "title": "性别",
+          "type": "singleSelect",
+          "required": true,
+          "setting": {
+            "options": [
+              {
+                "id": "0c2875f1-c2c1-4048-9720-7e56d34b8a4b",
+                "title": "男",
+                "status": 2
+              },
+              {
+                "id": "21d20b96-e90c-42bc-a390-8afe980ca3cc",
+                "title": "女",
+                "status": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "69758cbe-91c3-4ad8-a0ef-939c75760a7a",
+          "isNew": true,
+          "title": "低能只会说我以为吗？",
+          "type": "input",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "b427da00-d6fb-421f-ae10-b38270066ce0",
+      "ctime": 1694683607130,
+      "utime": 1694683607130,
+      "status": 1,
+      "author": "7c265a60-eb4f-418f-bf02-dd799f754381",
+      "isStar": false,
+      "title": " 怎么有人会这么低能",
+      "subTitle": "什么垃圾都有",
+      "problems": [
+        {
+          "id": "7cceada8-d7de-4081-9d75-8ecbc9662d4d",
+          "isNew": true,
+          "title": "病号几",
+          "type": "input",
+          "required": true,
+          "setting": null
+        },
+        {
+          "id": "95d7dc61-e5ee-4bca-81f7-3cb0adcbd1f3",
+          "isNew": true,
+          "title": "性别",
+          "type": "singleSelect",
+          "required": true,
+          "setting": {
+            "options": [
+              {
+                "id": "88f9a198-9f47-4d5b-90dd-d42a634f9d15",
+                "title": "男",
+                "status": 2
+              },
+              {
+                "id": "db031aa6-c4b4-4a98-9863-0f3dd3740e21",
+                "title": "女",
+                "status": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "fa1d964c-9903-4aff-8503-960c85317aeb",
+          "isNew": true,
+          "title": "低能只会说我以为吗？",
+          "type": "input",
+          "required": true
+        }
+      ]
     }
   ],
   "users": [
@@ -637,7 +733,7 @@
       "ctime": 1693643862726,
       "utime": 1693643862726,
       "nickname": "PunchOvO",
-      "avatar": "blob:http://localhost:8080/5a7ddd38-ea6e-4886-9e44-c8b88cfd9f28"
+      "avatar": "blob:http://localhost:8080/d7e5cc58-7f72-497f-80f1-c0089aa4e024"
     },
     {
       "id": "2ea3071d-6d0f-43ef-aca8-d70cfc9a6555",
