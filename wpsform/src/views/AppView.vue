@@ -195,6 +195,7 @@ export default defineComponent({
   align-items: center;
   height: 100%;
 }
+
 .app-login-btn {
   color: #1488ed;
   border: 1px solid #1488ed;
@@ -202,9 +203,11 @@ export default defineComponent({
   background-color: #fff;
   transition: all 0.2s;
 }
+
 .app-login-btn:hover {
   background-color: #f6fbff;
 }
+
 .app-user {
   display: flex;
   justify-content: space-evenly;

@@ -53,9 +53,8 @@
                   :size="15"
                   color="#1488ED"
                   @click="delThisCommomUse(ques.id)"
-                >
-                  <CircleCloseFilled />
-                </el-icon>
+                  ><CircleCloseFilled
+                /></el-icon>
                 <a @click="addTemplateToQuesList(ques)">{{ ques.title }}</a>
               </li>
             </ul>
@@ -131,8 +130,9 @@ import { useStore } from "vuex";
 import axios from "axios";
 import { ElMessage } from "element-plus";
 import MyQuestion from "../components/MyQuestion/index.vue";
-import { IProblem } from "../types/types";
+import { formDraft, IProblem } from "../types/types";
 import {
+  createForm,
   getBasicQuestionTypes,
   getQuestionTypes,
   startCollect,
@@ -190,7 +190,6 @@ export default defineComponent({
     };
     // 向中间添加一个模板题目
     const addTemplateToQuesList = (problem: IProblem) => {
-      console.log("problem", problem);
       Store.commit("form/addQuesToQuesList", { problem: problem, index: -1 });
     };
     // 判断表单是否完成
@@ -257,33 +256,43 @@ export default defineComponent({
     };
     // 使用草稿
     const useDraft = () => {
-      if (!Store.state.form.formTitleDraft)
+      if (!localStorage.getItem("formDraft"))
         return ElMessage({
           message: "未找到草稿",
           type: "warning",
           center: true,
         });
-      formTitle.value = Store.state.form.formTitleDraft;
-      formSubTitle.value = Store.state.form.formSubTitleDraft;
       Store.commit("form/useDraft");
-      ElMessage({
-        message: "读取成功",
-        type: "success",
-        center: true,
-      });
+      
     };
     // 保存草稿
-    const saveDraft = () => {
+    const saveDraft = async () => {
+      // 已完成表单
       if (isCompleted() === true) {
-        Store.commit("form/setFormTitleDraft", formTitle.value);
-        Store.commit("form/setFormSubTitleDraft", formSubTitle.value);
-        Store.commit("form/saveDraft");
+        try {
+          const res = await createForm(
+            formTitle.value,
+            formSubTitle.value,
+            questionList.value
+          );
+          // 创建成功
+          if (res.data.stat === "ok") {
+            ElMessage({
+              message: "草稿保存成功",
+              type: "success",
+              center: true,
+            });
+            // 提交到vuex 
+            Store.commit("form/setFormDraft");
 
-        ElMessage({
-          message: "保存成功",
-          type: "success",
-          center: true,
-        });
+          }
+        } catch (e: any) {
+          ElMessage({
+            message: e.message,
+            type: "error",
+            center: true,
+          });
+        }
       }
     };
     // 创建表单
@@ -291,23 +300,21 @@ export default defineComponent({
       // 已完成表单
       if (isCompleted() === true) {
         try {
-          const res = await axios({
-            method: "POST",
-            url: "/api/form/create",
-            data: {
-              title: formTitle.value,
-              subTitle: formSubTitle.value,
-              problems: questionList.value,
-            },
-          });
+          const res = await createForm(
+            formTitle.value,
+            formSubTitle.value,
+            questionList.value
+          );
           // 创建成功
           if (res.data.stat === "ok") {
-            startCollect(res.data.data.id);
             ElMessage({
               message: "创建成功",
               type: "success",
               center: true,
             });
+            // 开始收集
+            startCollect(res.data.data.id);
+            // 跳转至分享页面
             Router.push({
               name: "share",
               query: {
@@ -316,7 +323,6 @@ export default defineComponent({
             });
           }
         } catch (e: any) {
-          console.log(e.message);
           ElMessage({
             message: e.message,
             type: "error",
@@ -338,7 +344,7 @@ export default defineComponent({
         res.data.data.basicProblems
       );
     };
-    // 获取左边的收藏题目类型
+    // 获取左边的收藏题目
     const getStarQues = async () => {
       const res = await axios({
         method: "POST",
@@ -353,7 +359,6 @@ export default defineComponent({
         );
       }
     };
-    //
     const myCommonUseManage = ref(false);
     // 我的常用管理
     const manageCommonStar = () => {

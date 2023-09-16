@@ -63,19 +63,18 @@ export default defineComponent({
 
 <style scoped>
 .form-question-main {
+  display: flex;
+  justify-content: center;
   width: 100%;
   min-width: 330px;
   height: 100%;
-  /* background-color: #f2f4f7; */
-  margin: 0 auto;
-  overflow: auto;
+  background-color: #f2f4f7;
 }
 
 .form-question-content {
   min-height: 100%;
   width: 100%;
   background-color: #fff;
-  /* padding: 30px 60px 0; */
   overflow: auto;
 }
 
@@ -85,6 +84,7 @@ export default defineComponent({
   position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 3;
   width: 100%;
   background-color: #fff;
   padding: 15px 0;
@@ -96,20 +96,14 @@ export default defineComponent({
 }
 
 @media screen and (min-width: 768px) {
-  .form-question-main {
-    width: 80%;
-  }
   .form-question-content {
-    padding: 36px 80px 50px;
+    width: 80%;
   }
 }
 
 @media screen and (min-width: 1366px) {
-  .form-question-main {
-    width: 60%;
-  }
   .form-question-content {
-    padding: 48px 120px 90px;
+    width: 60%;
   }
 }
 </style>

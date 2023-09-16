@@ -82,7 +82,6 @@
               >停止</el-button
             >
             <el-button @click.stop="deleteForm(scope.row.id)">删除</el-button>
-            <!-- <el-button @click.stop="writeForm(scope.row.id)" v-if="scope.row.status == 3">表单填写(测试用)</el-button> -->
           </template>
         </el-table-column>
       </el-table>
@@ -120,7 +119,7 @@ export default defineComponent({
     let formList = reactive([] as IForm[]);
     // 记录表单分页时的索引
     const currentIndex = ref(0);
-
+    // 获取表单列表
     const getFormList = async (
       offset?: number,
       limit?: number,
@@ -392,7 +391,6 @@ export default defineComponent({
 .form-list {
   margin-top: 56px;
 }
-
 .form-list-aside {
   display: flex;
   flex-direction: column;
@@ -400,14 +398,15 @@ export default defineComponent({
   border: 1px solid #ccc;
   border-top: 0;
 }
-
 .form-list-aside-top {
-  padding: 40px;
+  padding: 40px 0;
 }
 
 .form-create-btn {
-  width: 120px;
+  width: 200px;
   padding: 20px;
+  background: #1488ed;
+  color: #fff;
 }
 
 .form-list-title {
@@ -418,7 +417,6 @@ export default defineComponent({
   width: 100%;
   padding: 30px 0;
 }
-
 .form-list-container {
   flex: 1;
   margin: 20px;
@@ -452,7 +450,6 @@ export default defineComponent({
   margin-right: 30px;
   cursor: pointer;
 }
-
 .count {
   margin: 0 15px;
 }
@@ -461,7 +458,6 @@ export default defineComponent({
 .icon-star-full {
   font-size: 24px;
 }
-
 .icon-star-full {
   color: #f8d61d;
 }

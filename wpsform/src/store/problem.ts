@@ -30,7 +30,6 @@ export default {
     },
     // 批量将问题添加到常用
     addAllToCommonUse(state: any, value: IProblem[]) {
-      console.log("addAllToCommonUse", value);
       state.commonUseQues = value;
     },
     // 清空常用
@@ -47,10 +46,8 @@ export default {
   state: {
     // 左侧适配的题目类型列表
     quesTypes: [],
-
     // 左侧题目模板列表
     questionFormworks: [] as IProblem[],
-
     // 我的常用
     commonUseQues: [] as IProblem[],
   },
