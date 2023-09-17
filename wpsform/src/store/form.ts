@@ -53,7 +53,7 @@ export default {
     setFormTitle(state: any, value: string) {
       state.formTitle = value;
     },
-    // 设置表单付标题
+    // 设置表单副标题
     setFormSubTitle(state: any, value: string) {
       state.formSubTitle = value;
     },
@@ -62,14 +62,14 @@ export default {
       state.formDraft = {
         formTitle: state.formTitle,
         formSubTitle: state.formSubTitle,
-        problems: state.questionList,
+        problem: state.questionList,
       };
       localStorage.setItem("formDraft", JSON.stringify(state.formDraft));
     },
     // 使用草稿
     useDraft(state: any) {
       const form = JSON.parse(localStorage.getItem("formDraft") as string);
-      state.questionList = form.problems;
+      state.questionList = state.questionListDraft;
       state.formTitle = form.formTitle;
       state.formSubTitle = form.formSubTitle;
       ElMessage({

@@ -285,6 +285,7 @@ export default defineComponent({
   align-items: center;
   margin-bottom: 40px;
 }
+
 .back-icon {
   font-size: 35px;
   margin-top: -1px;
@@ -343,14 +344,12 @@ export default defineComponent({
   .page-left {
     width: 0;
   }
-
   .top-logo {
     top: 15px;
     left: 15px;
     width: 249px;
     height: 22.5px;
   }
-
   .back-icon {
     font-size: 33px;
     margin-top: 2px;
@@ -359,55 +358,45 @@ export default defineComponent({
   .register-box-top {
     margin-bottom: 30px;
   }
-  
   .register-title {
     margin-left: 10px;
   }
-
   .register-title {
     font-size: 35px;
     font-weight: 600;
     color: #000;
   }
-
   .text-input {
     width: 300px;
     height: 45px;
     margin: 10px 0;
     font-size: 16px;
   }
-
   .tip {
     position: absolute;
     font-size: 12px;
     color: #8b8989;
   }
-
   .accountTip {
     top: 155px;
   }
-
   .passwordTip {
     top: 222px;
   }
-
   .confirmPwdTip {
     top: 310px;
   }
-
   .operate-box {
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
   }
-
   .register-btn {
     align-self: center;
     width: 150px;
     height: 50px;
     font-size: 18px;
   }
-  
   .goLogin {
     margin-top: 15px;
   }

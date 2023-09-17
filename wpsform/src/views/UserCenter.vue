@@ -22,16 +22,31 @@
             </div>
           </div>
           <!-- 修改头像对话框 -->
-          <el-dialog v-model="dialogAvatarVisible" title="上传新头像" width="500px" @close="handleAvatarClose">
+          <el-dialog
+            v-model="dialogAvatarVisible"
+            title="上传新头像"
+            width="500px"
+            @close="handleAvatarClose"
+          >
             <div class="avatar-container">
               <!-- 上传预览区域 -->
               <div class="avatar-box">
-                <el-upload action="#" :auto-upload="false" :on-change="handleOnchange" ref="upload"
-                  :show-file-list="false">
-                  <el-image v-if="imageUrl" :src="imageUrl" class="new-avatar" fit="cover" />
-                  <el-icon v-else class="avatar-uploader-icon">
-                    <Plus />
-                  </el-icon>
+                <el-upload
+                  action="#"
+                  :auto-upload="false"
+                  :on-change="handleOnchange"
+                  ref="upload"
+                  :show-file-list="false"
+                >
+                  <el-image
+                    v-if="imageUrl"
+                    :src="imageUrl"
+                    class="new-avatar"
+                    fit="cover"
+                  />
+                  <el-icon v-else class="avatar-uploader-icon"
+                    ><Plus
+                  /></el-icon>
                 </el-upload>
               </div>
               <!-- 上传提示 -->
@@ -39,8 +54,13 @@
                 只能上传jpg/png格式且大小不超过3MB的图片(点击图片可直接覆盖)
               </div>
               <!-- 按钮 -->
-              <div class="avatar-operate-box" :style="{ height: showOperate + 'px' }">
-                <el-button type="primary" @click="submitAvatar">确认修改</el-button>
+              <div
+                class="avatar-operate-box"
+                :style="{ height: showOperate + 'px' }"
+              >
+                <el-button type="primary" @click="submitAvatar"
+                  >确认修改</el-button
+                >
                 <el-button @click="cancelUpload">取消上传</el-button>
               </div>
             </div>
@@ -58,10 +78,16 @@
             <button class="change-btn" @click="toInputNickname">修改</button>
           </div>
           <div v-else class="input-nickname-box">
-            <el-input class="text-input" v-model="new_nickname" :value="userInfo.nickname" />
+            <el-input
+              class="text-input"
+              v-model="new_nickname"
+              :value="userInfo.nickname"
+            />
             <div class="btn-box">
               <el-button @click="toShowNickname" size="small">取消</el-button>
-              <el-button @click="submitNickname" type="primary" size="small">确认</el-button>
+              <el-button @click="submitNickname" type="primary" size="small"
+                >确认</el-button
+              >
             </div>
           </div>
         </div>
@@ -74,29 +100,56 @@
               修改
             </button>
             <!-- 修改密码对话框 -->
-            <el-dialog v-model="dialogChangePwdVisible" title="修改密码" width="500px" @close="handlePasswordClose">
+            <el-dialog
+              v-model="dialogChangePwdVisible"
+              title="修改密码"
+              width="500px"
+              @close="handlePasswordClose"
+            >
               <div class="password-container">
                 <el-form :model="ruleForm" :rules="rules" ref="ruleFormRef">
                   <el-form-item prop="old_password">
-                    <el-input class="password-input" placeholder="原密码" v-model="ruleForm.old_password"
-                      show-password></el-input>
+                    <el-input
+                      class="password-input"
+                      placeholder="原密码"
+                      v-model="ruleForm.old_password"
+                      show-password
+                    ></el-input>
                   </el-form-item>
                   <el-form-item prop="new_password">
-                    <el-popover placement="right" title="规则" :width="200" trigger="click" popper-class="popper"
-                      content="必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-20个字符之间">
+                    <el-popover
+                      placement="right"
+                      title="规则"
+                      :width="200"
+                      trigger="click"
+                      popper-class="popper"
+                      content="必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-20个字符之间"
+                    >
                       <template #reference>
-                        <el-input class="password-input" placeholder="密码" v-model="ruleForm.new_password" show-password>
+                        <el-input
+                          class="password-input"
+                          placeholder="密码"
+                          v-model="ruleForm.new_password"
+                          show-password
+                        >
                         </el-input>
                       </template>
                     </el-popover>
                   </el-form-item>
                   <el-form-item prop="confirm_password">
-                    <el-input class="password-input" placeholder="确认密码" v-model="ruleForm.confirm_password"
-                      autocomplete="off" show-password></el-input>
+                    <el-input
+                      class="password-input"
+                      placeholder="确认密码"
+                      v-model="ruleForm.confirm_password"
+                      autocomplete="off"
+                      show-password
+                    ></el-input>
                   </el-form-item>
                 </el-form>
                 <div class="password-operate-box">
-                  <el-button type="primary" @click="submitPassword">确认修改</el-button>
+                  <el-button type="primary" @click="submitPassword"
+                    >确认修改</el-button
+                  >
                   <el-button @click="cancelChangePwd">取消修改</el-button>
                 </div>
               </div>
@@ -418,7 +471,6 @@ export default defineComponent({
   min-width: 365px;
   margin: 0 auto;
 }
-
 .inner-box {
   margin-bottom: 10px;
   padding: 0 30px;
@@ -430,7 +482,8 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff url(//qn.cache.wpscdn.cn/s1/avatar-bg.7d147f4.png) no-repeat 100% 100%;
+  background: #fff url(//qn.cache.wpscdn.cn/s1/avatar-bg.7d147f4.png) no-repeat
+    100% 100%;
 }
 
 .user-avatar {

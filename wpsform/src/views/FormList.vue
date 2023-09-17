@@ -391,6 +391,7 @@ export default defineComponent({
 .form-list {
   margin-top: 56px;
 }
+
 .form-list-aside {
   display: flex;
   flex-direction: column;
@@ -398,6 +399,7 @@ export default defineComponent({
   border: 1px solid #ccc;
   border-top: 0;
 }
+
 .form-list-aside-top {
   padding: 40px 0;
 }
@@ -417,6 +419,7 @@ export default defineComponent({
   width: 100%;
   padding: 30px 0;
 }
+
 .form-list-container {
   flex: 1;
   margin: 20px;
@@ -450,6 +453,7 @@ export default defineComponent({
   margin-right: 30px;
   cursor: pointer;
 }
+
 .count {
   margin: 0 15px;
 }
@@ -458,6 +462,7 @@ export default defineComponent({
 .icon-star-full {
   font-size: 24px;
 }
+
 .icon-star-full {
   color: #f8d61d;
 }

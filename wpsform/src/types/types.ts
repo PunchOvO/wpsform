@@ -26,7 +26,7 @@ export interface IFormResult {
 }
 
 export interface IProblem {
-  id: string;
+  id?: string;
   title: string;
   type:
     | "input"
@@ -66,5 +66,5 @@ export interface option {
 export interface formDraft {
   formTitle: string;
   formSubTitle: string;
-  questions: IProblem[];
+  questions: IProblem;
 }

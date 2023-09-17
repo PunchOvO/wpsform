@@ -263,7 +263,6 @@ export default defineComponent({
           center: true,
         });
       Store.commit("form/useDraft");
-      
     };
     // 保存草稿
     const saveDraft = async () => {
@@ -282,9 +281,8 @@ export default defineComponent({
               type: "success",
               center: true,
             });
-            // 提交到vuex 
+            // 提交到vuex
             Store.commit("form/setFormDraft");
-
           }
         } catch (e: any) {
           ElMessage({
