@@ -23,5 +23,5 @@ export default {
       window.sessionStorage.getItem("user") || JSON.stringify({})
     ) as IUser,
   },
-  getters: {},
+  // getters: {},
 };
