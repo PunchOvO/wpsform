@@ -727,7 +727,7 @@
       "id": "8850a0bc-8b89-4849-8e49-242654c0492c",
       "ctime": 1695114423232,
       "utime": 1695114423232,
-      "status": 2,
+      "status": 1,
       "author": "7c265a60-eb4f-418f-bf02-dd799f754381",
       "isStar": false,
       "title": "测试秋招表单",
@@ -822,7 +822,7 @@
       "id": "10043a36-b7db-489f-83a5-fee8804cd0d3",
       "ctime": 1695114425314,
       "utime": 1695114425314,
-      "status": 3,
+      "status": 4,
       "author": "7c265a60-eb4f-418f-bf02-dd799f754381",
       "isStar": false,
       "title": "测试秋招表单",
@@ -894,6 +894,101 @@
         },
         {
           "id": "bdf36e5e-2d46-4f26-b037-dececb6f0fef",
+          "isNew": true,
+          "title": "还有多久才拿第一个offer？",
+          "type": "time",
+          "required": true,
+          "setting": {
+            "options": [
+              {
+                "title": "HM",
+                "status": 1
+              },
+              {
+                "title": "HMS",
+                "status": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "3e2563ed-f748-48df-bde1-8c72172c35d8",
+      "ctime": 1695549749977,
+      "utime": 1695549749977,
+      "status": 3,
+      "author": "7c265a60-eb4f-418f-bf02-dd799f754381",
+      "isStar": false,
+      "title": "测试秋招表单",
+      "subTitle": "这是一个test",
+      "problems": [
+        {
+          "id": "58a5f07b-2f71-4a9f-a388-556f3c4c0d00",
+          "isNew": true,
+          "title": "姓名",
+          "type": "input",
+          "required": true,
+          "setting": null
+        },
+        {
+          "id": "147e0147-336d-427b-a3d3-4e2e910a2f32",
+          "isNew": true,
+          "title": "性别",
+          "type": "singleSelect",
+          "required": true,
+          "setting": {
+            "options": [
+              {
+                "id": "3202c1ab-aef9-4860-8424-4c829257d1b7",
+                "title": "男",
+                "status": 2
+              },
+              {
+                "id": "15245939-bafc-4406-a95b-af0341f7c439",
+                "title": "女",
+                "status": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "8221415d-2c5d-4853-93a7-6f5470b1e506",
+          "isNew": true,
+          "title": "秋招这么难是实力问题还是实力问题",
+          "type": "input",
+          "required": true
+        },
+        {
+          "id": "f9fb0a84-5e19-4e43-b283-620bba5dfd85",
+          "isNew": true,
+          "title": "如果准备的再充分一点面试结果会怎样呢",
+          "type": "pullSelect",
+          "required": true,
+          "setting": {
+            "options": [
+              {
+                "id": "a53cea3e-c248-49e8-a3c3-9880da1d7355",
+                "title": "会天台见",
+                "status": 2
+              },
+              {
+                "id": "ae2fab40-2541-40e0-b6cd-440215ccb2ae",
+                "title": "会off",
+                "status": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "fe2ad4ab-9280-4704-8514-a6691c512870",
+          "isNew": true,
+          "title": "对最近的八股进度满意吗？",
+          "type": "score",
+          "required": true
+        },
+        {
+          "id": "4816a76b-12b2-4dc7-8bfc-d81f15eefd50",
           "isNew": true,
           "title": "还有多久才拿第一个offer？",
           "type": "time",

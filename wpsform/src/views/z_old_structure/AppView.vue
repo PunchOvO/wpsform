@@ -72,7 +72,7 @@ import { defineComponent, ref, reactive, computed, onBeforeMount } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import * as api from "@/services/api";
-import { IUser, IForm, IProblem } from "../types/types";
+import { IUser, IForm, IProblem } from "@/types/types";
 import { ElMessage } from "element-plus";
 
 export default defineComponent({

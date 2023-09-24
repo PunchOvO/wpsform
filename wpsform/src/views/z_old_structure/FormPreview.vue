@@ -23,7 +23,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { IForm } from "../types/types";
+import { IForm } from "@/types/types";
 import ProblemItem from "../components/ProblemItem.vue";
 import { useStore } from "vuex";
 import { ElMessage } from "element-plus";

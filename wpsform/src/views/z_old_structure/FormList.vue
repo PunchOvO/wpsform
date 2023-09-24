@@ -102,7 +102,7 @@
 import { defineComponent, ref, reactive, onBeforeMount } from "vue";
 import { useRouter } from "vue-router";
 import * as api from "@/services/api";
-import { IUser, IForm, IProblem } from "../types/types";
+import { IUser, IForm, IProblem } from "@/types/types";
 import { useStore } from "vuex";
 import dayjs from "dayjs";
 import { ElMessage } from "element-plus";

@@ -130,7 +130,7 @@ import { useStore } from "vuex";
 import axios from "axios";
 import { ElMessage } from "element-plus";
 import MyQuestion from "../components/MyQuestion/index.vue";
-import { formDraft, IProblem } from "../types/types";
+import { formDraft, IProblem } from "@/types/types";
 import {
   createForm,
   getBasicQuestionTypes,
