@@ -8,14 +8,14 @@
     </div>
     <div class="copy-btn-box">
       <button class="copy-btn" @click="cpoyShareUrl">
-        <el-icon> <Paperclip /> </el-icon>复制链接
+        <el-icon><Paperclip /></el-icon>复制链接
       </button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from "vue";
+import { computed, defineComponent, ref, getCurrentInstance } from "vue";
 import { useRoute } from "vue-router";
 import QrcodeVue from "qrcode.vue";
 import useClipboard from "vue-clipboard3";
@@ -25,23 +25,24 @@ export default defineComponent({
   components: { QrcodeVue },
   props: {},
   setup(props, ctx) {
+    const { proxy } = getCurrentInstance() as any;
     const Route = useRoute();
     const { toClipboard } = useClipboard();
     const formId = ref(Route.query.id as string);
     const shareUrl = computed(
-      () => `localhost:8080/form-write?id=${formId.value}`
+      () => `${proxy.$currentDomainName}/form-write?id=${formId.value}`
     );
     const cpoyShareUrl = async () => {
       try {
         await toClipboard(shareUrl.value);
         ElMessage({
-          message: "复制成功！",
+          message: "复制成功！请去浏览器打开",
           type: "success",
           center: true,
         });
       } catch (e) {
         ElMessage({
-          message: "复制失败~",
+          message: "复制失败！",
           type: "error",
           center: true,
         });
@@ -52,9 +53,6 @@ export default defineComponent({
       shareUrl,
       cpoyShareUrl,
     };
-  },
-  created() {
-    console.log("分享id:", this.formId);
   },
 });
 </script>

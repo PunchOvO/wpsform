@@ -275,7 +275,7 @@ export default defineComponent({
           // 创建成功
           if (res.data.stat === "ok") {
             ElMessage({
-              message: "草稿保存成功",
+              message: "保存草稿成功",
               type: "success",
               center: true,
             });

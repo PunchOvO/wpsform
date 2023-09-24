@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-// import HomeView from "@/views/HomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
-  // 根路径，直接跳转至首页的
+  // 根路径,欢迎页
   {
     path: "/",
     name: "root",
@@ -19,45 +18,71 @@ const routes: Array<RouteRecordRaw> = [
         path: "form-list",
         name: "form-list",
         component: () => import("@/views/AppView/FormList/index.vue"),
+        meta: {
+          showLogo: true,
+          showLogoName: true,
+        },
       },
       // 新建表单
       {
         path: "new-form-create",
         name: "new-form-create",
-        component: () => import("@/views/NewformCreate/index.vue"),
+        component: () => import("@/views/AppView/NewformCreate/index.vue"),
+        meta: {
+          showLogo: true,
+          showLogoName: true,
+        },
       },
       // 预览表单
       {
         path: "form-preview",
         name: "form-preview",
-        component: () => import("@/views/FormPreview/index.vue"),
+        component: () => import("@/views/AppView/FormPreview/index.vue"),
+        meta: {
+          showLogo: true,
+          showLogoName: false,
+        },
       },
       // 填写详情
       {
         path: "new-form-result",
         name: "new-form-result",
-        component: () => import("@/views/NewformResult/index.vue"),
+        component: () => import("@/views/AppView/NewformResult/index.vue"),
         children: [
           // 填写详情，数据统计&分析
           {
             path: "statistical-details",
             name: "statistical-details",
             component: () =>
-              import("@/views/NewformResult/StatisticalDetails/index.vue"),
+              import(
+                "@/views/AppView/NewformResult/StatisticalDetails/index.vue"
+              ),
+            meta: {
+              showLogo: true,
+              showLogoName: false,
+            },
           },
           // 填写详情，表单问题
           {
             path: "form-question",
             name: "form-question",
             component: () =>
-              import("@/views/NewformResult/FormQuestion/index.vue"),
+              import("@/views/AppView/NewformResult/FormQuestion/index.vue"),
+            meta: {
+              showLogo: true,
+              showLogoName: false,
+            },
           },
           // 填写详情，分享
           {
             path: "share",
             name: "share",
             component: () =>
-              import("@/views/NewformResult/FormShare/index.vue"),
+              import("@/views/AppView/NewformResult/FormShare/index.vue"),
+            meta: {
+              showLogo: true,
+              showLogoName: false,
+            },
           },
           // 重定向
           {
@@ -93,7 +118,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   // 表单填写
   {
-    path: "/form-write/:id",
+    path: "/form-write",
     name: "form-write",
     component: () => import("@/views/FormWrite/index.vue"),
   },

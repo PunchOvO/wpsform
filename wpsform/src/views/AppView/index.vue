@@ -3,23 +3,29 @@
     <!-- APP顶部栏 -->
     <el-header class="app-top">
       <!-- 左侧区域 -->
-      <!-- 首页显示logo -->
-      <router-link to="/" class="app-logo" v-show="appStatus == 1">
-        <!-- logo图片 -->
-        <img src="@/assets/imgs/logo.svg" alt="logo" />
-        <!-- logo文字：金山表单 -->
-        <span class="logo-name">金山表单</span>
-      </router-link>
-      <!-- 新建表单页面显示返回图标+新建表单 -->
-      <div class="app-logoArea" v-if="appStatus == 2">
-        <el-page-header content="新建表单" @back="goBack" />
-        <!-- <el-icon><ArrowLeftBold @click="goBack" /></el-icon>
-        <span>新建表单</span> -->
+      <div class="left-header">
+        <!-- 表单详情页面显示返回图标+当前表单名 -->
+        <div
+          class="app-logoArea"
+          v-show="route.path.includes('new-form-result')"
+        >
+          <el-page-header @back="goBack" />
+        </div>
+        <!-- 首页显示logo -->
+        <router-link to="/" class="app-logo" v-show="route.meta.showLogo">
+          <!-- logo图片 -->
+          <img src="@/assets/imgs/logo.svg" alt="logo" />
+          <!-- logo文字：金山表单 -->
+          <span class="logo-name" v-show="route.meta.showLogoName"
+            >金山表单</span
+          >
+        </router-link>
+        <!-- 表单名称 -->
+        <div class="formName" v-show="route.path.includes('new-form-result')">
+          <span>{{ store.state.form.visitingForm.title }}</span>
+        </div>
       </div>
-      <!-- 表单详情页面显示返回图标+当前表单名 -->
-      <div class="app-logoArea" v-if="appStatus == 3">
-        <el-page-header :content="formTitle" @back="goBack" />
-      </div>
+
       <!-- 右侧个人信息显示：头像昵称 -->
       <div class="app-user-info">
         <!-- 登录按钮 -->
@@ -63,14 +69,14 @@
         </div>
       </div>
     </el-header>
-    <router-view @showFormTitle="showFormTitle"></router-view>
+    <router-view></router-view>
   </el-container>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, reactive, computed, onBeforeMount } from "vue";
 import { useStore } from "vuex";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import * as api from "@/services/api";
 import { IUser, IForm, IProblem } from "@/types/types";
 import { ElMessage } from "element-plus";
@@ -82,7 +88,7 @@ export default defineComponent({
   setup(props, ctx) {
     const store = useStore();
     const router = useRouter();
-    // const usericon = '../assets/imgs/logo.svg'
+    const route = useRoute();
     const appStatus = computed(() => store.state.user.appStatus);
     const userInfo = computed(() => store.state.user.userInfo);
     const formTitle = ref("");
@@ -99,10 +105,6 @@ export default defineComponent({
         window.localStorage.removeItem("user");
         router.push("/login");
       }
-    };
-    // 改变页头标题
-    const showFormTitle = (value: any) => {
-      formTitle.value = value;
     };
 
     const getUserInfo = async () => {
@@ -130,13 +132,13 @@ export default defineComponent({
     });
 
     return {
+      route,
       store,
       appStatus,
       goBack,
       logout,
       userInfo,
       formTitle,
-      showFormTitle,
     };
   },
 });
@@ -148,22 +150,29 @@ export default defineComponent({
 }
 
 .app-top {
-  padding: 0 16px;
-}
-
-.app-top {
   width: 100%;
+  padding: 0 16px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 56px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #e7e9eb;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+}
+
+.formName {
+  color: #3c414b;
+  font-weight: 500;
 }
 
 .app-logo {
