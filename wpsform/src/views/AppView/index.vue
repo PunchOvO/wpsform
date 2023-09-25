@@ -89,7 +89,6 @@ export default defineComponent({
     const store = useStore();
     const router = useRouter();
     const route = useRoute();
-    const appStatus = computed(() => store.state.user.appStatus);
     const userInfo = computed(() => store.state.user.userInfo);
     const formTitle = ref("");
 
@@ -128,13 +127,11 @@ export default defineComponent({
       else {
         getUserInfo();
       }
-      // console.log(typeof store.state.userInfo)
     });
 
     return {
       route,
       store,
-      appStatus,
       goBack,
       logout,
       userInfo,

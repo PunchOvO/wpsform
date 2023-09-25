@@ -122,7 +122,7 @@ const routes: Array<RouteRecordRaw> = [
     name: "form-write",
     component: () => import("@/views/FormWrite/index.vue"),
   },
-  // notfound
+  // notfound 注释掉空头文件
   // {
   //   path: "/:pathMatch(.*)*",
   //   name: "NotFound",
